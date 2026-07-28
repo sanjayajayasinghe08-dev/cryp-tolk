@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cryp Tolk | Crypto Market Analysis & Free Trading Guides</title>
+  <meta name="description" content="Cryp Tolk delivers professional crypto market analysis, custom TradingView indicators, and free PDF strategy guides for BTC, ETH, SOL, DOGE, and RENDER." />
+  <meta name="keywords" content="crypto analysis, bitcoin strategy, trading indicators, free PDF guide, BTC ETH SOL DOGE RENDER" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- ═══════════════════════════════════════════════════
+       GOOGLE ADSENSE – Replace ca-pub-XXXXXXXXXXXXXXXX
+       with your Publisher ID from adsense.google.com
+  ═══════════════════════════════════════════════════ -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+          crossorigin="anonymous"></script>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            obsidian:       '#0B0E14',
+            surface:        '#111520',
+            'surface-2':    '#161B27',
+            'orange-el':    '#FF6B1A',
+            'gold-met':     '#C8A840',
+          },
+          fontFamily: {
+            sans:    ['Inter', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* ── Base ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background-color: #0B0E14; font-family: 'Inter', sans-serif; color: #F0F0F0; -webkit-font-smoothing: antialiased; }
+
+    /* ── Glass ── */
+    .glass-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .glass-nav {
+      background: rgba(11,14,20,0.88);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+
+    /* ── Gradient text ── */
+    .grad-orange {
+      background: linear-gradient(135deg,#FF6B1A,#FFa050);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .grad-gold {
+      background: linear-gradient(135deg,#C8A840,#E8C860);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Buttons ── */
+    .btn-orange {
+      background: linear-gradient(135deg,#FF6B1A,#FF8C42);
+      transition: box-shadow .25s, transform .25s;
+    }
+    .btn-orange:hover { box-shadow: 0 0 26px rgba(255,107,26,.55); transform: translateY(-2px); }
+
+    .btn-gold {
+      background: linear-gradient(135deg,#C8A840,#E0BA4A);
+      transition: box-shadow .25s, transform .25s;
+    }
+    .btn-gold:hover { box-shadow: 0 0 26px rgba(200,168,64,.5); transform: translateY(-2px); }
+
+    .btn-outline-orange {
+      border: 1px solid rgba(255,107,26,.45);
+      color: #FF6B1A;
+      transition: background .25s, border-color .25s, box-shadow .25s, transform .25s;
+    }
+    .btn-outline-orange:hover {
+      background: rgba(255,107,26,.1);
+      border-color: #FF6B1A;
+      box-shadow: 0 0 18px rgba(255,107,26,.3);
+      transform: translateY(-2px);
+    }
+
+    /* ── Card hover ── */
+    .card-hover { transition: transform .3s, border-color .3s, box-shadow .3s; }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,107,26,.3) !important;
+      box-shadow: 0 12px 40px rgba(0,0,0,.45);
+    }
+
+    /* ── Section divider ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg,transparent,rgba(255,107,26,.35),transparent);
+      margin: 0 auto;
+      max-width: 1100px;
+    }
+
+    /* ── Nav link underline ── */
+    .nav-link {
+      position: relative; color: #9CA3AF;
+      font-size: .875rem; font-weight: 500;
+      transition: color .2s;
+    }
+    .nav-link::after {
+      content:''; position:absolute; bottom:-5px; left:0;
+      width:0; height:1px; background:#FF6B1A;
+      transition: width .3s ease;
+    }
+    .nav-link:hover { color: #F0F0F0; }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link.active { color: #FF6B1A; }
+    .nav-link.active::after { width: 100%; }
+
+    /* ── Live pulse ── */
+    @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.45} }
+    .live-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+    /* ── Affiliate cards ── */
+    .bybit-card {
+      background: rgba(240,185,11,.05);
+      border: 1px solid rgba(240,185,11,.2);
+    }
+    .binance-card {
+      background: rgba(200,168,64,.05);
+      border: 1px solid rgba(200,168,64,.2);
+    }
+
+    /* ── Modal ── */
+    .modal-bg {
+      background: rgba(0,0,0,.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .modal-box {
+      background: #111520;
+      border: 1px solid rgba(255,107,26,.2);
+      border-radius: 1.25rem;
+    }
+    .modal-box h3 { color: #F0F0F0; font-weight: 600; font-size: 1rem; margin-top: 1.25rem; }
+    .modal-box p  { color: #9CA3AF; font-size: .875rem; line-height: 1.7; }
+
+    /* ── Mobile menu ── */
+    .mobile-menu {
+      background: rgba(11,14,20,.97);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    /* ── Footer link ── */
+    .foot-link {
+      color: #4B5563;
+      font-size: .75rem;
+      transition: color .2s;
+    }
+    .foot-link:hover { color: #FF6B1A; }
+
+    /* ── Newsletter input ── */
+    .nl-input {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      color: #F0F0F0;
+      border-radius: .75rem;
+      padding: .625rem 1rem;
+      font-size: .875rem;
+      outline: none;
+      transition: border-color .25s;
+      width: 100%;
+    }
+    .nl-input::placeholder { color: #4B5563; }
+    .nl-input:focus { border-color: #FF6B1A; }
+
+    /* ── AdSense ad unit wrapper ── */
+    .ad-unit {
+      width: 100%; overflow: hidden;
+      padding: 8px 0;
+      text-align: center;
+    }
+    .ad-unit .ad-label {
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #374151;
+      margin-bottom: 4px;
+    }
+    .adsbygoogle { display: block; }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     STICKY NAVBAR
+═══════════════════════════════════════════ -->
+<nav class="glass-nav fixed top-0 inset-x-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2 shrink-0">
+      <div class="btn-orange w-8 h-8 rounded-lg flex items-center justify-center">
+        <i class="fas fa-chart-line text-white text-xs"></i>
+      </div>
+      <span class="font-display font-bold text-lg tracking-tight">
+        <span class="text-white">Cryp</span><span class="grad-orange"> Tolk</span>
+      </span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html"      class="nav-link active">Home</a>
+      <a href="indicators.html" class="nav-link">Indicators</a>
+      <a href="books.html"      class="nav-link">Books</a>
+    </div>
+
+    <!-- Desktop Social + CTA -->
+    <div class="hidden md:flex items-center gap-4">
+      <a href="#" aria-label="Follow on X" class="text-gray-500 hover:text-white transition-colors text-lg"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" aria-label="Join Telegram" class="text-gray-500 hover:text-blue-400 transition-colors text-lg"><i class="fab fa-telegram"></i></a>
+      <a href="#" aria-label="Watch on YouTube" class="text-gray-500 hover:text-red-500 transition-colors text-lg"><i class="fab fa-youtube"></i></a>
+      <a href="#" class="btn-orange text-white text-xs font-semibold px-4 py-2 rounded-lg ml-1">Subscribe Free</a>
+    </div>
+
+    <!-- Hamburger -->
+    <button id="hambBtn" class="md:hidden p-2 text-gray-400 hover:text-white" aria-label="Toggle navigation">
+      <i id="hambIcon" class="fas fa-bars text-xl"></i>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div id="mobileMenu" class="mobile-menu hidden md:hidden">
+    <div class="px-5 py-4 space-y-1">
+      <a href="index.html"      class="block py-2 text-orange-el font-medium text-sm">Home</a>
+      <a href="indicators.html" class="block py-2 text-gray-400 hover:text-white text-sm">Indicators</a>
+      <a href="books.html"      class="block py-2 text-gray-400 hover:text-white text-sm">Books</a>
+      <div class="flex items-center gap-5 pt-3 border-t border-white/10 mt-2">
+        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="text-gray-400 hover:text-blue-400 text-xl"><i class="fab fa-telegram"></i></a>
+        <a href="#" class="text-gray-400 hover:text-red-500 text-xl"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════════ -->
+<section class="pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+
+  <!-- Badge + Heading -->
+  <div class="text-center mb-10">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5"
+         style="background:rgba(255,107,26,.08);border:1px solid rgba(255,107,26,.2);">
+      <span class="w-2 h-2 rounded-full bg-orange-el live-dot"></span>
+      <span class="text-xs font-semibold tracking-widest uppercase" style="color:#FF6B1A;">Latest Market Analysis</span>
+    </div>
+    <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-4">
+      Your Edge in<br>
+      <span class="grad-orange">Crypto Markets</span>
+    </h1>
+    <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+      Professional-grade analysis, custom TradingView indicators, and data-driven strategies —
+      all in one place. No noise. Just signal.
+    </p>
+  </div>
+
+  <!-- YouTube Player -->
+  <div class="max-w-4xl mx-auto relative">
+    <div class="glass-card rounded-2xl p-1.5">
+      <div class="relative w-full rounded-xl overflow-hidden" style="padding-bottom:56.25%;">
+        <iframe
+          class="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed/videoseries?list=PLbpi6ZahtOH6Ar_3GPy3workdxnHLdmXT"
+          title="Cryp Tolk – Latest Market Analysis"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+    <!-- Ambient glow -->
+    <div class="absolute -bottom-3 left-1/4 right-1/4 h-8 rounded-full blur-2xl"
+         style="background:#FF6B1A;opacity:.12;"></div>
+  </div>
+
+  <!-- Quick Stats -->
+  <div class="grid grid-cols-3 gap-4 max-w-xl mx-auto mt-12">
+    <div class="text-center">
+      <div class="font-display text-3xl font-bold grad-orange">47K+</div>
+      <div class="text-gray-500 text-xs mt-1">Subscribers</div>
+    </div>
+    <div class="text-center border-x border-white/10">
+      <div class="font-display text-3xl font-bold grad-gold">200+</div>
+      <div class="text-gray-500 text-xs mt-1">Videos Published</div>
+    </div>
+    <div class="text-center">
+      <div class="font-display text-3xl font-bold grad-orange">98%</div>
+      <div class="text-gray-500 text-xs mt-1">Accuracy Rate</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── AdSense: Responsive Leaderboard – Below Hero ── -->
+<div class="ad-unit max-w-4xl mx-auto px-4 my-2">
+  <p class="ad-label">Advertisement</p>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="1111111111"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<div class="divider px-4"></div>
+
+
+<!-- ═══════════════════════════════════════════
+     STRATEGY & ARTICLES SECTION (AdSense Ready)
+═══════════════════════════════════════════ -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+
+  <!-- Section Header -->
+  <div class="mb-10">
+    <div class="flex items-center gap-3 mb-2">
+      <div class="w-1 h-6 rounded-full" style="background:#FF6B1A;"></div>
+      <span class="text-xs font-semibold tracking-widest uppercase" style="color:#FF6B1A;">Strategy Breakdowns</span>
+    </div>
+    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Coin Analysis &amp; Free PDF Guides</h2>
+    <p class="text-gray-400 mt-2 text-sm max-w-xl">
+      Deep-dive strategy articles paired with downloadable PDF guides. Master each asset's
+      unique market dynamics and build a rules-based trading approach.
+    </p>
+  </div>
+
+  <!-- 5 Article Cards + Newsletter Card = 6-item grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+    <!-- ▸ BTC -->
+    <article class="glass-card card-hover rounded-2xl p-6 flex flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl"
+               style="background:rgba(247,147,26,.14);border:1px solid rgba(247,147,26,.3);">₿</div>
+          <div>
+            <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Bitcoin</div>
+            <div class="font-display font-bold text-white leading-tight">BTC Analysis</div>
+          </div>
+        </div>
+        <span class="text-xs px-2.5 py-1 rounded-full font-semibold"
+              style="background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.2);">Bullish</span>
+      </div>
+      <p class="text-gray-400 text-sm leading-relaxed flex-1">
+        Bitcoin is the bellwether of the entire crypto market, and understanding its price structure is
+        foundational to successful trading. Our BTC strategy uses multi-timeframe confluence analysis —
+        combining the monthly chart for macro directional bias, the weekly for trend confirmation, and the
+        4-hour chart for precision entries. We apply Fibonacci retracement zones, volume profile nodes
+        (including the Point of Control and Value Area High/Low), and the 200-day moving average as dynamic
+        support. This free PDF guide covers our exact rules-based system for managing BTC positions through
+        high-volatility cycles, including stop-loss placement relative to key liquidity zones, position
+        sizing methodology, and risk-to-reward targeting strategies used by professional traders.
+      </p>
+      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold
+                         flex items-center justify-center gap-2 mt-auto">
+        <i class="fas fa-file-pdf"></i> Download Free PDF Guide
+      </a>
+    </article>
+
+    <!-- ▸ ETH -->
+    <article class="glass-card card-hover rounded-2xl p-6 flex flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl"
+               style="background:rgba(98,126,234,.14);border:1px solid rgba(98,126,234,.3);">Ξ</div>
+          <div>
+            <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Ethereum</div>
+            <div class="font-display font-bold text-white leading-tight">ETH Analysis</div>
+          </div>
+        </div>
+        <span class="text-xs px-2.5 py-1 rounded-full font-semibold"
+              style="background:rgba(234,179,8,.1);color:#eab308;border:1px solid rgba(234,179,8,.2);">Neutral</span>
+      </div>
+      <p class="text-gray-400 text-sm leading-relaxed flex-1">
+        Ethereum's evolving role as the leading smart contract platform means its price action is uniquely
+        influenced by on-chain metrics — daily active addresses, gas fee velocity, staking flows, and
+        DeFi total value locked (TVL). Our ETH strategy integrates blockchain data analytics directly with
+        technical chart analysis to identify macro accumulation zones and short-term breakout setups. We
+        examine the ETH/BTC ratio to gauge relative strength against Bitcoin, apply order-block theory
+        to identify institutional demand zones, and use fair-value gap (FVG) analysis alongside liquidity
+        sweep identification. The accompanying PDF guide provides a complete framework for trading ETH
+        across different market phases, including how institutional spot ETF flows affect volatility on
+        lower timeframes and the best indicators for catching ETH's explosive momentum moves.
+      </p>
+      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold
+                         flex items-center justify-center gap-2 mt-auto">
+        <i class="fas fa-file-pdf"></i> Download Free PDF Guide
+      </a>
+    </article>
+
+    <!-- ▸ SOL -->
+    <article class="glass-card card-hover rounded-2xl p-6 flex flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
+               style="background:rgba(153,69,255,.14);border:1px solid rgba(153,69,255,.3);color:#9945FF;">SOL</div>
+          <div>
+            <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Solana</div>
+            <div class="font-display font-bold text-white leading-tight">SOL Analysis</div>
+          </div>
+        </div>
+        <span class="text-xs px-2.5 py-1 rounded-full font-semibold"
+              style="background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.2);">Bullish</span>
+      </div>
+      <p class="text-gray-400 text-sm leading-relaxed flex-1">
+        Solana has emerged as one of the highest-momentum assets in the crypto ecosystem, making it
+        ideal for trend-following and breakout trading strategies. Our SOL analysis leverages momentum
+        oscillators — including RSI divergences and MACD crossovers on the daily timeframe — combined
+        with parabolic support identification to capture explosive breakout moves with precision. We also
+        track Solana-specific network metrics such as active wallet growth, daily transaction counts, NFT
+        minting volume, and DEX trading activity as leading indicators for price movement. Our free PDF
+        guide outlines the complete SOL trading playbook: how to identify institutional accumulation
+        patterns in quiet markets, set dynamic trailing stops during parabolic uptrends, and protect
+        capital during Solana's characteristically sharp 30–50% retracements within broader bull markets.
+      </p>
+      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold
+                         flex items-center justify-center gap-2 mt-auto">
+        <i class="fas fa-file-pdf"></i> Download Free PDF Guide
+      </a>
+    </article>
+
+    <!-- ── AdSense: In-Feed Ad (between cards) ── -->
+    <div class="ad-unit sm:col-span-2 lg:col-span-3 my-1">
+      <p class="ad-label">Advertisement</p>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+           data-ad-slot="2222222222"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+
+    <!-- ▸ DOGE -->
+    <article class="glass-card card-hover rounded-2xl p-6 flex flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl"
+               style="background:rgba(196,165,45,.14);border:1px solid rgba(196,165,45,.3);">🐕</div>
+          <div>
+            <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Dogecoin</div>
+            <div class="font-display font-bold text-white leading-tight">DOGE Analysis</div>
+          </div>
+        </div>
+        <span class="text-xs px-2.5 py-1 rounded-full font-semibold"
+              style="background:rgba(249,115,22,.1);color:#f97316;border:1px solid rgba(249,115,22,.2);">Volatile</span>
+      </div>
+      <p class="text-gray-400 text-sm leading-relaxed flex-1">
+        DOGE is driven by a unique combination of retail sentiment, social media viral catalysts, and
+        high-profile celebrity endorsements — requiring a sentiment-aware, narrative-driven trading
+        approach unlike any other asset. Our DOGE strategy focuses on identifying parabolic extension
+        cycles using historical meme-coin cycle data, key psychological price levels ($0.10, $0.25,
+        $0.50, $1.00), and volume-weighted momentum signals. We monitor social media velocity metrics
+        alongside on-chain whale wallet movements and exchange inflows to time optimal entries before
+        the retail crowd joins. The PDF guide breaks down three distinct DOGE strategies: the breakout
+        scalp for fast-moving traders, the sentiment reversal play for counter-trend positioning, and
+        the long-term meme-cycle accumulation method — each with clearly defined risk parameters and
+        real backtested examples.
+      </p>
+      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold
+                         flex items-center justify-center gap-2 mt-auto">
+        <i class="fas fa-file-pdf"></i> Download Free PDF Guide
+      </a>
+    </article>
+
+    <!-- ▸ RENDER -->
+    <article class="glass-card card-hover rounded-2xl p-6 flex flex-col gap-4">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold"
+               style="background:rgba(255,107,26,.14);border:1px solid rgba(255,107,26,.3);color:#FF6B1A;">RNDR</div>
+          <div>
+            <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Render</div>
+            <div class="font-display font-bold text-white leading-tight">RENDER Analysis</div>
+          </div>
+        </div>
+        <span class="text-xs px-2.5 py-1 rounded-full font-semibold"
+              style="background:rgba(99,102,241,.1);color:#818cf8;border:1px solid rgba(99,102,241,.2);">AI Sector</span>
+      </div>
+      <p class="text-gray-400 text-sm leading-relaxed flex-1">
+        Render Network represents the powerful convergence of decentralized GPU computing and the
+        accelerating AI/ML infrastructure boom, positioning it as one of the most strategically compelling
+        assets in the Web3 infrastructure sector. Our RENDER analysis blends fundamental narrative
+        momentum — tracking Nvidia GPU partnership developments, Hollywood render job volume on the
+        protocol, and Render Network revenue metrics — with technical breakout analysis on the weekly
+        chart. We model adoption-driven price targets using a comparative analysis framework against
+        traditional cloud compute valuations. The PDF guide teaches you how to position in AI-narrative
+        tokens before mainstream attention arrives, how to manage sector rotation risk when AI stocks
+        cool off, and how to use cross-asset correlation between $NVDA and $RNDR to find high-probability
+        setups in this rapidly growing infrastructure-layer niche.
+      </p>
+      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold
+                         flex items-center justify-center gap-2 mt-auto">
+        <i class="fas fa-file-pdf"></i> Download Free PDF Guide
+      </a>
+    </article>
+
+    <!-- ▸ Newsletter Card -->
+    <div class="rounded-2xl p-6 flex flex-col gap-4"
+         style="background:linear-gradient(135deg,rgba(255,107,26,.1),rgba(200,168,64,.07));
+                border:1px solid rgba(255,107,26,.2);">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full flex items-center justify-center"
+             style="background:rgba(255,107,26,.18);">
+          <i class="fas fa-bell" style="color:#FF6B1A;"></i>
+        </div>
+        <div class="font-display font-bold text-white text-lg">Free Newsletter</div>
+      </div>
+      <p class="text-gray-400 text-sm leading-relaxed flex-1">
+        Get weekly market analysis, indicator alerts, and exclusive PDF strategy guides delivered
+        straight to your inbox. Join 47,000+ traders who rely on Cryp Tolk for their edge.
+        No spam. Unsubscribe anytime.
+      </p>
+      <div class="mt-auto space-y-2">
+        <input type="email" placeholder="Your email address" class="nl-input" />
+        <button class="btn-orange w-full py-2.5 rounded-xl text-sm font-semibold text-white">
+          Get Free Guides →
+        </button>
+      </div>
+    </div>
+
+  </div><!-- end grid -->
+</section>
+
+<!-- ── AdSense: Responsive Banner – Below Articles ── -->
+<div class="ad-unit max-w-5xl mx-auto px-4 my-2">
+  <p class="ad-label">Advertisement</p>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="3333333333"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<div class="divider px-4"></div>
+
+
+<!-- ═══════════════════════════════════════════
+     AFFILIATE SECTION
+═══════════════════════════════════════════ -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+
+  <div class="mb-10">
+    <div class="flex items-center gap-3 mb-2">
+      <div class="w-1 h-6 rounded-full" style="background:#C8A840;"></div>
+      <span class="text-xs font-semibold tracking-widest uppercase" style="color:#C8A840;">Trusted Exchanges</span>
+    </div>
+    <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Start Trading with a Bonus</h2>
+    <p class="text-gray-400 mt-2 text-sm max-w-xl">
+      We only recommend exchanges we personally use and trust. Sign up through our partner links
+      and unlock exclusive welcome bonuses available only to Cryp Tolk readers.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+    <!-- Bybit -->
+    <div class="bybit-card card-hover rounded-2xl p-8 flex flex-col gap-5">
+      <div class="flex items-center justify-between">
+        <div class="font-display font-bold text-3xl text-white">Bybit</div>
+        <div class="text-xs px-3 py-1 rounded-full font-semibold"
+             style="background:rgba(240,185,11,.12);color:#F0B90B;border:1px solid rgba(240,185,11,.3);">
+          <i class="fas fa-star mr-1 text-xs"></i> Top Rated
+        </div>
+      </div>
+      <div>
+        <div class="font-display font-bold text-4xl" style="color:#F0B90B;">Up to $30,000</div>
+        <div class="text-gray-400 text-sm mt-1">Welcome deposit &amp; trading bonus</div>
+      </div>
+      <ul class="space-y-2.5 text-sm text-gray-400">
+        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> 0% maker fees on spot trading pairs</li>
+        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> Up to 100× leverage on perpetual contracts</li>
+        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> Native TradingView charting integration</li>
+        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> Secure cold storage &amp; two-factor authentication</li>
+        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> Copy-trading &amp; automated bot marketplace</li>
+      </ul>
+      <a href="#" class="btn-gold text-obsidian font-bold py-3 rounded-xl text-center text-sm
+                          flex items-center justify-center gap-2 mt-auto">
+        Claim Bybit Bonus <i class="fas fa-arrow-right"></i>
+      </a>
+      <p class="text-gray-600 text-xs text-center">*Terms &amp; conditions apply. Trade responsibly. Crypto involves risk.</p>
+    </div>
+
+    <!-- Binance -->
+    <div class="binance-card card-hover rounded-2xl p-8 flex flex-col gap-5">
+      <div class="flex items-center justify-between">
+        <div class="font-display font-bold text-3xl text-white">Binance</div>
+        <div class="text-xs px-3 py-1 rounded-full font-semibold"
+             style="background:rgba(200,168,64,.12);color:#C8A840;border:1px solid rgba(200,168,64,.3);">
+          <i class="fas fa-crown mr-1 text-xs"></i> #1 Worldwide
+        </div>
+      </div>
+      <div>
+        <div class="font-display font-bold text-4xl" style="color:#C8A840;">20% Fee Discount</div>
+        <div class="text-gray-400 text-sm mt-1">Lifetime trading fee reduction via referral</div>
+      </div>
+      <ul class="space-y-2.5 text-sm text-gray-400">
+        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> World's largest exchange by daily volume</li>
+        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> 350+ trading pairs available 24/7/365</li>
+        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> BNB staking, Launchpad &amp; earn products</li>
+        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> Regulated in multiple major jurisdictions</li>
+        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> Lowest fees with BNB token discounts</li>
+      </ul>
+      <a href="#" class="btn-orange text-white font-bold py-3 rounded-xl text-center text-sm
+                          flex items-center justify-center gap-2 mt-auto">
+        Sign Up on Binance <i class="fas fa-arrow-right"></i>
+      </a>
+      <p class="text-gray-600 text-xs text-center">*Crypto trading involves significant risk. Do your own research.</p>
+    </div>
+
+  </div>
+
+  <!-- Affiliate disclosure -->
+  <p class="text-center text-gray-600 text-xs mt-6">
+    <i class="fas fa-info-circle mr-1"></i>
+    Affiliate disclosure: Cryp Tolk may earn a commission when you sign up via our links. This doesn't affect the price you pay.
+  </p>
+</section>
+
+<!-- ── AdSense: Responsive Banner – Above Footer ── -->
+<div class="ad-unit max-w-5xl mx-auto px-4 my-2">
+  <p class="ad-label">Advertisement</p>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="4444444444"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<div class="divider px-4"></div>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="py-14 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+
+    <!-- Top row -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <a href="index.html" class="flex items-center gap-2 mb-4">
+          <div class="btn-orange w-8 h-8 rounded-lg flex items-center justify-center">
+            <i class="fas fa-chart-line text-white text-xs"></i>
+          </div>
+          <span class="font-display font-bold text-lg">
+            <span class="text-white">Cryp</span><span class="grad-orange"> Tolk</span>
+          </span>
+        </a>
+        <p class="text-gray-500 text-sm leading-relaxed mb-5">
+          Professional crypto education and market analysis. Not financial advice.
+        </p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-gray-500 hover:text-white transition-colors text-lg"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" class="text-gray-500 hover:text-blue-400 transition-colors text-lg"><i class="fab fa-telegram"></i></a>
+          <a href="#" class="text-gray-500 hover:text-red-500 transition-colors text-lg"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Pages -->
+      <div>
+        <h4 class="text-white text-xs font-semibold uppercase tracking-widest mb-4">Pages</h4>
+        <ul class="space-y-2">
+          <li><a href="index.html"      class="foot-link">Home</a></li>
+          <li><a href="indicators.html" class="foot-link">TradingView Indicators</a></li>
+          <li><a href="books.html"      class="foot-link">Crypto Books</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <h4 class="text-white text-xs font-semibold uppercase tracking-widest mb-4">Resources</h4>
+        <ul class="space-y-2">
+          <li><a href="#" class="foot-link">YouTube Channel</a></li>
+          <li><a href="#" class="foot-link">Telegram Group</a></li>
+          <li><a href="#" class="foot-link">Free PDF Guides</a></li>
+          <li><a href="#" class="foot-link">TradingView Scripts</a></li>
+        </ul>
+      </div>
+
+      <!-- Disclaimer -->
+      <div>
+        <h4 class="text-white text-xs font-semibold uppercase tracking-widest mb-4">Disclaimer</h4>
+        <p class="text-gray-600 text-xs leading-relaxed">
+          All content on cryptolk.tech is for educational and informational purposes only.
+          Nothing constitutes financial advice. Crypto markets are highly volatile — always do
+          your own research before investing. Past performance is not indicative of future results.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Bottom row -->
+    <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-gray-600 text-xs">© 2025 Cryp Tolk · cryptolk.tech · All rights reserved.</p>
+      <div class="flex items-center flex-wrap justify-center gap-x-5 gap-y-2">
+        <button onclick="openModal('privacy')"  class="foot-link">Privacy Policy</button>
+        <button onclick="openModal('terms')"    class="foot-link">Terms of Service</button>
+        <button onclick="openModal('about')"    class="foot-link">About Us</button>
+        <button onclick="openModal('contact')"  class="foot-link">Contact Us</button>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════
+     LEGAL MODALS
+═══════════════════════════════════════════ -->
+<div id="modalOverlay"
+     class="modal-bg fixed inset-0 z-[100] hidden items-center justify-center p-4">
+  <div class="modal-box max-w-2xl w-full p-8 relative max-h-[88vh] overflow-y-auto">
+    <button onclick="closeModal()"
+            class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center
+                   text-gray-500 hover:text-white rounded-lg transition-colors"
+            aria-label="Close modal">
+      <i class="fas fa-times text-lg"></i>
+    </button>
+    <h2 id="modalTitle" class="font-display font-bold text-2xl text-white mb-6"></h2>
+    <div id="modalBody" class="space-y-4"></div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+/* ── Mobile Menu ── */
+const hambBtn  = document.getElementById('hambBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const hambIcon = document.getElementById('hambIcon');
+hambBtn.addEventListener('click', () => {
+  const open = !mobileMenu.classList.contains('hidden');
+  mobileMenu.classList.toggle('hidden', open);
+  hambIcon.className = open ? 'fas fa-bars text-xl' : 'fas fa-times text-xl';
+});
+
+/* ── Modal Data ── */
+const MODALS = {
+  privacy: {
+    title: 'Privacy Policy',
+    body: `
+      <p><strong style="color:#F0F0F0;">Last Updated: January 1, 2025</strong></p>
+      <p>At Cryp Tolk ("we," "our," or "us"), we are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you visit cryptolk.tech.</p>
+      <h3>1. Information We Collect</h3>
+      <p>We may collect personal information you voluntarily provide — such as your email address when subscribing to our newsletter. We also automatically collect certain technical data when you visit our website, including your IP address, browser type, operating system, referring URLs, and pages viewed. This data is collected through cookies and similar tracking technologies including Google Analytics and Google AdSense.</p>
+      <h3>2. How We Use Your Information</h3>
+      <p>We use collected information to deliver our newsletter and educational content, improve website performance and user experience, analyze traffic patterns, display relevant advertising through Google AdSense, and respond to your inquiries. We do not sell, rent, or trade your personal information to third parties without your consent.</p>
+      <h3>3. Cookies &amp; Advertising</h3>
+      <p>We use first-party cookies and third-party cookies from Google Analytics and Google AdSense. Google AdSense may use cookies to display personalized advertisements based on your browsing behavior. You can opt out of personalized ads by visiting Google's Ads Settings page. You can also control cookie preferences through your browser settings, though disabling cookies may affect website functionality.</p>
+      <h3>4. Third-Party Services</h3>
+      <p>We use trusted third-party service providers including Google Analytics for traffic analysis, Google AdSense for advertising, and email marketing platforms for newsletter delivery. These providers have their own privacy policies and are obligated to protect your information.</p>
+      <h3>5. Data Security</h3>
+      <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. However, no internet transmission is 100% secure, and we cannot guarantee absolute security of data transmitted to our website.</p>
+      <h3>6. Your Rights</h3>
+      <p>You have the right to access, correct, or delete your personal information at any time. You may opt out of our marketing emails using the unsubscribe link in any email. For any privacy-related requests, please contact us at privacy@cryptolk.tech.</p>
+      <h3>7. Children's Privacy</h3>
+      <p>Our website is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe we have inadvertently collected such information, please contact us immediately so we can delete it.</p>
+      <h3>8. Changes to This Policy</h3>
+      <p>We reserve the right to update this Privacy Policy at any time. Changes will be posted on this page with an updated date. Your continued use of our website after changes constitutes your acceptance of the revised policy.</p>
+    `
+  },
+  terms: {
+    title: 'Terms of Service',
+    body: `
+      <p><strong style="color:#F0F0F0;">Last Updated: January 1, 2025</strong></p>
+      <p>Welcome to Cryp Tolk. By accessing or using cryptolk.tech, you agree to be bound by these Terms of Service. Please read them carefully. If you do not agree to all terms, please discontinue use of our website immediately.</p>
+      <h3>1. Acceptance of Terms</h3>
+      <p>By accessing cryptolk.tech, you confirm you are at least 18 years of age, have legal capacity to enter into these terms, and agree to comply with all applicable laws and regulations in your jurisdiction regarding cryptocurrency trading and online content.</p>
+      <h3>2. Educational Content Only — Not Financial Advice</h3>
+      <p>All content published on Cryp Tolk — including market analysis, strategy guides, indicator descriptions, book recommendations, and video content — is strictly for educational and informational purposes only. Nothing on this website constitutes financial, investment, legal, or tax advice. We are not a registered financial advisor, broker-dealer, or investment firm. You should always conduct thorough independent research and consult a qualified financial professional before making any investment decision.</p>
+      <h3>3. Risk Disclaimer</h3>
+      <p>Cryptocurrency trading and investing involves substantial risk of loss and is not suitable for all investors. The extreme volatility of cryptocurrency markets means you could lose part or all of your invested capital. Past performance of any strategy, indicator, or asset discussed on this website is not indicative of future results. Never invest more than you can afford to lose.</p>
+      <h3>4. Intellectual Property</h3>
+      <p>All content on this website — including text, graphics, logos, images, PDF guides, TradingView indicator scripts, and video content — is the intellectual property of Cryp Tolk and is protected by applicable copyright laws. You may not reproduce, distribute, modify, or create derivative works from our content without express written permission.</p>
+      <h3>5. Affiliate Disclosure</h3>
+      <p>Cryp Tolk participates in affiliate marketing programs with cryptocurrency exchanges and other financial service providers. We may earn a commission when you sign up or make a qualifying transaction through our affiliate links. This does not affect the cost to you. We only recommend products and services we genuinely use and believe provide real value to our audience.</p>
+      <h3>6. User Conduct</h3>
+      <p>You agree not to use our website to engage in any unlawful activity, distribute spam or malicious code, attempt to gain unauthorized access to any part of our systems, violate any third-party intellectual property rights, or engage in any activity that disrupts or interferes with the normal operation of our website.</p>
+      <h3>7. Limitation of Liability</h3>
+      <p>To the maximum extent permitted by law, Cryp Tolk, its owners, employees, contributors, and affiliates shall not be liable for any direct, indirect, incidental, special, punitive, or consequential damages arising from your use of our website, reliance on any information provided herein, or any trading decisions you make based on our content. Your use of this website is entirely at your own risk.</p>
+      <h3>8. Governing Law</h3>
+      <p>These Terms of Service shall be governed by and construed in accordance with applicable laws. Any disputes arising from or related to these Terms shall be resolved through binding arbitration, and you waive any right to a jury trial or class action proceeding.</p>
+    `
+  },
+  about: {
+    title: 'About Cryp Tolk',
+    body: `
+      <p>Cryp Tolk (cryptolk.tech) is a professional crypto market analysis and education platform built by experienced traders, for traders at every level. We operate at the intersection of technical analysis, on-chain data intelligence, and market psychology to deliver actionable insights across the most important assets in the crypto ecosystem.</p>
+      <h3>Our Mission</h3>
+      <p>Our mission is to democratize high-quality crypto trading education. We believe every retail trader deserves access to the same analytical frameworks, tools, and insights used by institutional market participants. By providing free PDF strategy guides, custom TradingView Pine Script indicators, and consistent weekly video analysis, we aim to give our community a genuine edge in the markets.</p>
+      <h3>What We Cover</h3>
+      <p>We publish in-depth market analysis and strategy guides for Bitcoin (BTC), Ethereum (ETH), Solana (SOL), Dogecoin (DOGE), Render Network (RNDR), and other high-potential assets. Our analysis methodology combines multi-timeframe technical analysis, volume profile theory, Fibonacci retracement and extension levels, Smart Money Concepts (order blocks, fair value gaps, liquidity sweeps), and fundamental on-chain data metrics.</p>
+      <h3>Our Custom TradingView Tools</h3>
+      <p>Our team develops and shares custom TradingView Pine Script indicators specifically designed for crypto market dynamics. These tools are used by thousands of traders across 50+ countries to identify key market structure shifts, volume anomalies, and high-probability trade setups. All indicator scripts are free to access via our TradingView page.</p>
+      <h3>Our Community</h3>
+      <p>The Cryp Tolk community spans YouTube, Telegram, and X (formerly Twitter), with over 47,000 subscribers and followers. We are committed to maintaining a high-signal, noise-free environment where serious traders can learn, sharpen their skills, and connect with like-minded individuals.</p>
+      <h3>Transparency &amp; Ethics</h3>
+      <p>We believe in full transparency. We clearly disclose all affiliate relationships and always flag sponsored content. We do not accept payment for favorable coverage of any cryptocurrency project, exchange, or financial product. Our recommendations are based solely on our genuine assessment of value to our audience.</p>
+    `
+  },
+  contact: {
+    title: 'Contact Us',
+    body: `
+      <p>We'd love to hear from you. Whether you have a question about our content, a business inquiry, a technical issue, or feedback on our guides, reach out through any of the channels below and we'll get back to you promptly.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px;">
+        <div class="glass-card" style="border-radius:12px;padding:16px;display:flex;align-items:center;gap:14px;">
+          <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,107,26,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i class="fas fa-envelope" style="color:#FF6B1A;"></i>
+          </div>
+          <div>
+            <div style="color:#F0F0F0;font-size:.875rem;font-weight:600;">General Inquiries</div>
+            <div style="color:#6B7280;font-size:.875rem;">hello@cryptolk.tech</div>
+          </div>
+        </div>
+        <div class="glass-card" style="border-radius:12px;padding:16px;display:flex;align-items:center;gap:14px;">
+          <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,107,26,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i class="fas fa-handshake" style="color:#FF6B1A;"></i>
+          </div>
+          <div>
+            <div style="color:#F0F0F0;font-size:.875rem;font-weight:600;">Business &amp; Partnerships</div>
+            <div style="color:#6B7280;font-size:.875rem;">partners@cryptolk.tech</div>
+          </div>
+        </div>
+        <div class="glass-card" style="border-radius:12px;padding:16px;display:flex;align-items:center;gap:14px;">
+          <div style="width:40px;height:40px;border-radius:10px;background:rgba(29,161,242,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i class="fab fa-telegram" style="color:#38bdf8;"></i>
+          </div>
+          <div>
+            <div style="color:#F0F0F0;font-size:.875rem;font-weight:600;">Telegram Community</div>
+            <div style="color:#6B7280;font-size:.875rem;">@CrypTolkOfficial</div>
+          </div>
+        </div>
+        <div class="glass-card" style="border-radius:12px;padding:16px;display:flex;align-items:center;gap:14px;">
+          <div style="width:40px;height:40px;border-radius:10px;background:rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i class="fab fa-youtube" style="color:#ef4444;"></i>
+          </div>
+          <div>
+            <div style="color:#F0F0F0;font-size:.875rem;font-weight:600;">YouTube Channel</div>
+            <div style="color:#6B7280;font-size:.875rem;">youtube.com/@CrypTolk</div>
+          </div>
+        </div>
+        <div class="glass-card" style="border-radius:12px;padding:16px;display:flex;align-items:center;gap:14px;">
+          <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <i class="fab fa-x-twitter" style="color:#E5E7EB;"></i>
+          </div>
+          <div>
+            <div style="color:#F0F0F0;font-size:.875rem;font-weight:600;">X (Twitter)</div>
+            <div style="color:#6B7280;font-size:.875rem;">@CrypTolk</div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:16px;color:#4B5563;font-size:.75rem;">
+        We typically respond to all email inquiries within 24–48 business hours.
+        For the fastest response, reach out via Telegram.
+      </p>
+    `
+  }
+};
+
+/* ── Modal Functions ── */
+function openModal(type) {
+  const data = MODALS[type];
+  if (!data) return;
+  document.getElementById('modalTitle').textContent = data.title;
+  document.getElementById('modalBody').innerHTML    = data.body;
+  const overlay = document.getElementById('modalOverlay');
+  overlay.classList.remove('hidden');
+  overlay.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  const overlay = document.getElementById('modalOverlay');
+  overlay.classList.add('hidden');
+  overlay.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+
+/* Close on backdrop click */
+document.getElementById('modalOverlay').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+/* Close on Escape key */
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+</body>
+</html>
