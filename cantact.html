@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Cryp Tolk</title>
+  <meta name="description" content="Get in touch with Cryp Tolk. Contact us for general inquiries, business partnerships, or support via email, Telegram, YouTube, or X." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { obsidian:'#0B0E14','orange-el':'#FF6B1A','gold-met':'#C8A840' },
+          fontFamily: { sans:['Inter','sans-serif'], display:['Space Grotesk','sans-serif'] },
+        },
+      },
+    };
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{background:#0B0E14;font-family:'Inter',sans-serif;color:#F0F0F0;-webkit-font-smoothing:antialiased}
+    .glass-nav{background:rgba(11,14,20,.88);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+    .glass-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+    .grad-orange{background:linear-gradient(135deg,#FF6B1A,#FFa050);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .btn-orange{background:linear-gradient(135deg,#FF6B1A,#FF8C42);transition:box-shadow .25s,transform .25s}
+    .btn-orange:hover{box-shadow:0 0 26px rgba(255,107,26,.55);transform:translateY(-2px)}
+    .nav-link{position:relative;color:#9CA3AF;font-size:.875rem;font-weight:500;transition:color .2s}
+    .nav-link::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:1px;background:#FF6B1A;transition:width .3s ease}
+    .nav-link:hover{color:#F0F0F0}.nav-link:hover::after{width:100%}
+    .mobile-menu{background:rgba(11,14,20,.97);border-bottom:1px solid rgba(255,255,255,.06)}
+    .foot-link{color:#4B5563;font-size:.75rem;transition:color .2s}.foot-link:hover{color:#FF6B1A}
+    .contact-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:1rem;padding:1.5rem;display:flex;align-items:center;gap:1rem;transition:border-color .3s,transform .3s}
+    .contact-card:hover{border-color:rgba(255,107,26,.3);transform:translateY(-3px)}
+    .contact-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .form-input{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#F0F0F0;border-radius:.75rem;padding:.75rem 1rem;font-size:.9rem;outline:none;transition:border-color .25s;width:100%;font-family:'Inter',sans-serif}
+    .form-input::placeholder{color:#4B5563}
+    .form-input:focus{border-color:#FF6B1A;background:rgba(255,107,26,.04)}
+    .form-label{display:block;font-size:.8rem;font-weight:600;color:#9CA3AF;margin-bottom:.5rem}
+    .form-textarea{resize:vertical;min-height:130px}
+    .ad-unit{width:100%;overflow:hidden;padding:8px 0;text-align:center}
+    .ad-unit .ad-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#374151;margin-bottom:4px}
+    .adsbygoogle{display:block}
+    .success-msg{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);border-radius:.875rem;padding:1rem 1.25rem;color:#4ade80;font-size:.875rem;display:none;align-items:center;gap:.75rem;margin-top:1rem}
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="glass-nav fixed top-0 inset-x-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2">
+      <div class="btn-orange w-8 h-8 rounded-lg flex items-center justify-center"><i class="fas fa-chart-line text-white text-xs"></i></div>
+      <span class="font-display font-bold text-lg"><span class="text-white">Cryp</span><span class="grad-orange"> Tolk</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="index.html"      class="nav-link">Home</a>
+      <a href="indicators.html" class="nav-link">Indicators</a>
+      <a href="books.html"      class="nav-link">Books</a>
+    </div>
+    <div class="hidden md:flex items-center gap-4">
+      <a href="#" class="text-gray-500 hover:text-white transition-colors text-lg"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" class="text-gray-500 hover:text-blue-400 transition-colors text-lg"><i class="fab fa-telegram"></i></a>
+      <a href="#" class="text-gray-500 hover:text-red-500 transition-colors text-lg"><i class="fab fa-youtube"></i></a>
+    </div>
+    <button id="hambBtn" class="md:hidden p-2 text-gray-400 hover:text-white"><i id="hambIcon" class="fas fa-bars text-xl"></i></button>
+  </div>
+  <div id="mobileMenu" class="mobile-menu hidden md:hidden">
+    <div class="px-5 py-4 space-y-1">
+      <a href="index.html"      class="block py-2 text-gray-400 hover:text-white text-sm">Home</a>
+      <a href="indicators.html" class="block py-2 text-gray-400 hover:text-white text-sm">Indicators</a>
+      <a href="books.html"      class="block py-2 text-gray-400 hover:text-white text-sm">Books</a>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<main class="pt-28 pb-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+
+  <div class="flex items-center gap-2 text-xs text-gray-600 mb-8">
+    <a href="index.html" class="hover:text-orange-el transition-colors">Home</a>
+    <i class="fas fa-chevron-right text-xs"></i>
+    <span class="text-gray-400">Contact Us</span>
+  </div>
+
+  <div class="text-center mb-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4" style="background:rgba(255,107,26,.08);border:1px solid rgba(255,107,26,.2);">
+      <i class="fas fa-envelope text-xs" style="color:#FF6B1A;"></i>
+      <span class="text-xs font-semibold uppercase tracking-widest" style="color:#FF6B1A;">Get In Touch</span>
+    </div>
+    <h1 class="font-display font-bold text-4xl sm:text-5xl text-white mb-4">Contact <span class="grad-orange">Cryp Tolk</span></h1>
+    <p class="text-gray-400 text-lg max-w-xl mx-auto leading-relaxed">
+      Have a question, partnership inquiry, or just want to say hi? We respond to every message
+      within 24–48 business hours.
+    </p>
+  </div>
+
+  <!-- Ad unit -->
+  <div class="ad-unit mb-10">
+    <p class="ad-label">Advertisement</p>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="5050505050" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+    <!-- LEFT: Contact channels -->
+    <div>
+      <h2 class="font-display font-bold text-xl text-white mb-6">Reach Us Directly</h2>
+
+      <div class="space-y-4">
+
+        <a href="mailto:hello@cryptolk.site" class="contact-card block">
+          <div class="contact-icon" style="background:rgba(255,107,26,.14);"><i class="fas fa-envelope" style="color:#FF6B1A;"></i></div>
+          <div>
+            <div class="text-white font-semibold text-sm">General Inquiries</div>
+            <div class="text-gray-500 text-sm mt-0.5">hello@cryptolk.site</div>
+            <div class="text-gray-600 text-xs mt-1">Content questions, PDF guide requests, feedback</div>
+          </div>
+        </a>
+
+        <a href="mailto:partners@cryptolk.site" class="contact-card block">
+          <div class="contact-icon" style="background:rgba(200,168,64,.12);"><i class="fas fa-handshake" style="color:#C8A840;"></i></div>
+          <div>
+            <div class="text-white font-semibold text-sm">Business &amp; Partnerships</div>
+            <div class="text-gray-500 text-sm mt-0.5">partners@cryptolk.site</div>
+            <div class="text-gray-600 text-xs mt-1">Sponsorships, affiliate deals, collaborations</div>
+          </div>
+        </a>
+
+        <a href="#" class="contact-card block">
+          <div class="contact-icon" style="background:rgba(29,161,242,.12);"><i class="fab fa-telegram" style="color:#38bdf8;"></i></div>
+          <div>
+            <div class="text-white font-semibold text-sm">Telegram Community</div>
+            <div class="text-gray-500 text-sm mt-0.5">@CrypTolkOfficial</div>
+            <div class="text-gray-600 text-xs mt-1">Fastest response — live alerts &amp; discussions</div>
+          </div>
+        </a>
+
+        <a href="#" class="contact-card block">
+          <div class="contact-icon" style="background:rgba(239,68,68,.1);"><i class="fab fa-youtube" style="color:#ef4444;"></i></div>
+          <div>
+            <div class="text-white font-semibold text-sm">YouTube Channel</div>
+            <div class="text-gray-500 text-sm mt-0.5">youtube.com/@CrypTolk</div>
+            <div class="text-gray-600 text-xs mt-1">Weekly market analysis videos</div>
+          </div>
+        </a>
+
+        <a href="#" class="contact-card block">
+          <div class="contact-icon" style="background:rgba(255,255,255,.06);"><i class="fab fa-x-twitter" style="color:#E5E7EB;"></i></div>
+          <div>
+            <div class="text-white font-semibold text-sm">X (Twitter)</div>
+            <div class="text-gray-500 text-sm mt-0.5">@CrypTolk</div>
+            <div class="text-gray-600 text-xs mt-1">Quick market commentary &amp; news</div>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="mt-6 p-4 rounded-xl text-xs text-gray-500 leading-relaxed" style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);">
+        <i class="fas fa-clock text-gray-600 mr-1.5"></i>
+        <strong class="text-gray-400">Response Times:</strong> Email replies within 24–48 hrs on business days.
+        Telegram is monitored daily and typically responds within a few hours.
+        We do not offer personal investment advice or portfolio consultations.
+      </div>
+    </div>
+
+    <!-- RIGHT: Contact form -->
+    <div>
+      <h2 class="font-display font-bold text-xl text-white mb-6">Send Us a Message</h2>
+
+      <div class="space-y-4">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="form-label" for="fname">First Name</label>
+            <input type="text" id="fname" class="form-input" placeholder="John" />
+          </div>
+          <div>
+            <label class="form-label" for="lname">Last Name</label>
+            <input type="text" id="lname" class="form-input" placeholder="Doe" />
+          </div>
+        </div>
+
+        <div>
+          <label class="form-label" for="email">Email Address *</label>
+          <input type="email" id="email" class="form-input" placeholder="john@example.com" required />
+        </div>
+
+        <div>
+          <label class="form-label" for="subject">Subject</label>
+          <select id="subject" class="form-input" style="cursor:pointer;">
+            <option value="" style="background:#111520;">Select a topic...</option>
+            <option value="general" style="background:#111520;">General Question</option>
+            <option value="indicator" style="background:#111520;">TradingView Indicator</option>
+            <option value="pdf" style="background:#111520;">PDF Guide Request</option>
+            <option value="partnership" style="background:#111520;">Business / Partnership</option>
+            <option value="technical" style="background:#111520;">Technical Issue</option>
+            <option value="other" style="background:#111520;">Other</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="form-label" for="message">Message *</label>
+          <textarea id="message" class="form-input form-textarea" placeholder="Tell us how we can help you..." required></textarea>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <input type="checkbox" id="newsletter" class="mt-1 accent-orange-500 w-4 h-4 cursor-pointer" />
+          <label for="newsletter" class="text-gray-500 text-xs cursor-pointer leading-relaxed">
+            Subscribe me to the Cryp Tolk newsletter for weekly market analysis and free trading guides.
+          </label>
+        </div>
+
+        <button onclick="handleSubmit()" class="btn-orange w-full text-white font-semibold py-3 rounded-xl text-sm flex items-center justify-center gap-2">
+          <i class="fas fa-paper-plane text-xs"></i> Send Message
+        </button>
+
+        <div id="successMsg" class="success-msg">
+          <i class="fas fa-check-circle text-lg"></i>
+          <span>Message sent! We'll get back to you within 24–48 hours.</span>
+        </div>
+
+        <p class="text-gray-600 text-xs text-center">
+          By sending this message, you agree to our
+          <a href="privacy.html" class="text-gray-500 hover:text-orange-el underline underline-offset-2 transition-colors">Privacy Policy</a>.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Ad unit bottom -->
+  <div class="ad-unit mt-12">
+    <p class="ad-label">Advertisement</p>
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="5151515151" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- FAQ snippet -->
+  <div class="mt-12">
+    <h2 class="font-display font-bold text-xl text-white mb-5">Quick Answers</h2>
+    <div class="space-y-3">
+      <details class="glass-card rounded-xl p-4 cursor-pointer" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);">
+        <summary class="text-white font-semibold text-sm flex items-center justify-between list-none">
+          Do you offer 1-on-1 trading coaching or mentorship?
+          <i class="fas fa-chevron-down text-gray-500 text-xs"></i>
+        </summary>
+        <p class="text-gray-400 text-sm mt-3 leading-relaxed">Not at this time. All of our educational content is published for free on our website and YouTube channel. We believe the best coaching is the content itself — and it's available to everyone without cost.</p>
+      </details>
+      <details class="glass-card rounded-xl p-4 cursor-pointer" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);">
+        <summary class="text-white font-semibold text-sm flex items-center justify-between list-none">
+          Can you analyze a specific coin for me?
+          <i class="fas fa-chevron-down text-gray-500 text-xs"></i>
+        </summary>
+        <p class="text-gray-400 text-sm mt-3 leading-relaxed">We cover coin requests from time to time on our YouTube channel and Telegram group. The best way to request a coin analysis is to join our Telegram community @CrypTolkOfficial and post your request there — community votes help us decide what to cover next.</p>
+      </details>
+      <details class="glass-card rounded-xl p-4 cursor-pointer" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);">
+        <summary class="text-white font-semibold text-sm flex items-center justify-between list-none">
+          How do I report an error or outdated content?
+          <i class="fas fa-chevron-down text-gray-500 text-xs"></i>
+        </summary>
+        <p class="text-gray-400 text-sm mt-3 leading-relaxed">Please email us at hello@cryptolk.site with the subject line "Content Error" and include the URL of the page and a brief description of the issue. We take accuracy seriously and will review and update content promptly.</p>
+      </details>
+    </div>
+  </div>
+
+  <div class="mt-10 pt-8 border-t border-white/5">
+    <a href="index.html" class="inline-flex items-center gap-2 text-sm font-semibold" style="color:#FF6B1A;">
+      <i class="fas fa-arrow-left text-xs"></i> Back to Home
+    </a>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="py-10 px-4 sm:px-6 lg:px-8 border-t border-white/5">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-gray-600 text-xs">© 2025 Cryp Tolk · cryptolk.site · All rights reserved.</p>
+    <div class="flex items-center flex-wrap justify-center gap-x-5 gap-y-2">
+      <a href="privacy.html"  class="foot-link">Privacy Policy</a>
+      <a href="terms.html"    class="foot-link">Terms of Service</a>
+      <a href="about.html"    class="foot-link">About Us</a>
+      <a href="contact.html"  class="foot-link">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hambBtn=document.getElementById('hambBtn'),mobileMenu=document.getElementById('mobileMenu'),hambIcon=document.getElementById('hambIcon');
+  hambBtn.addEventListener('click',()=>{const o=!mobileMenu.classList.contains('hidden');mobileMenu.classList.toggle('hidden',o);hambIcon.className=o?'fas fa-bars text-xl':'fas fa-times text-xl'});
+
+  function handleSubmit() {
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    if (!email || !message) {
+      alert('Please fill in your email address and message.');
+      return;
+    }
+    const msg = document.getElementById('successMsg');
+    msg.style.display = 'flex';
+    setTimeout(() => msg.scrollIntoView({ behavior:'smooth', block:'nearest' }), 100);
+  }
+</script>
+</body>
+</html>
