@@ -4,228 +4,191 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cryp Talk | Crypto Market Analysis & Free Trading Guides</title>
-  <meta name="description" content="Cryp Talk delivers professional crypto market analysis, custom TradingView indicators, and free PDF strategy guides for BTC, ETH, SOL, DOGE, and RENDER." />
-  <meta name="keywords" content="crypto analysis, bitcoin strategy, trading indicators, free PDF guide, BTC ETH SOL DOGE RENDER" />
-
-  <!-- Google Fonts -->
+  <meta name="description" content="Cryp Talk delivers professional crypto market analysis, TradingView indicators, AI trading bots, and free PDF strategy guides for BTC, ETH, SOL, DOGE and RENDER." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
-  <!-- ═══════════════════════════════════════════════════
-       GOOGLE ADSENSE – Replace ca-pub-XXXXXXXXXXXXXXXX
-       with your Publisher ID from adsense.google.com
-  ═══════════════════════════════════════════════════ -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
-          crossorigin="anonymous"></script>
-
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            obsidian:       '#0B0E14',
-            surface:        '#111520',
-            'surface-2':    '#161B27',
-            'orange-el':    '#FF6B1A',
-            'gold-met':     '#C8A840',
+            obsidian: '#0B0E14', surface: '#111520',
+            'orange-el': '#FF6B1A', 'gold-met': '#C8A840',
           },
           fontFamily: {
-            sans:    ['Inter', 'sans-serif'],
-            display: ['Space Grotesk', 'sans-serif'],
+            sans: ['Inter','sans-serif'],
+            display: ['Space Grotesk','sans-serif'],
           },
         },
       },
     };
   </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 
   <style>
     /* ── Base ── */
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { background-color: #0B0E14; font-family: 'Inter', sans-serif; color: #F0F0F0; -webkit-font-smoothing: antialiased; }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:#0B0E14;font-family:'Inter',sans-serif;color:#F0F0F0;-webkit-font-smoothing:antialiased}
 
     /* ── Glass ── */
-    .glass-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-    }
-    .glass-nav {
-      background: rgba(11,14,20,0.88);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      backdrop-filter: blur(22px);
-      -webkit-backdrop-filter: blur(22px);
-    }
+    .glass-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+    .glass-nav{background:rgba(11,14,20,.88);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
 
     /* ── Gradient text ── */
-    .grad-orange {
-      background: linear-gradient(135deg,#FF6B1A,#FFa050);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .grad-gold {
-      background: linear-gradient(135deg,#C8A840,#E8C860);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+    .grad-orange{background:linear-gradient(135deg,#FF6B1A,#FFa050);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .grad-gold{background:linear-gradient(135deg,#C8A840,#E8C860);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
     /* ── Buttons ── */
-    .btn-orange {
-      background: linear-gradient(135deg,#FF6B1A,#FF8C42);
-      transition: box-shadow .25s, transform .25s;
-    }
-    .btn-orange:hover { box-shadow: 0 0 26px rgba(255,107,26,.55); transform: translateY(-2px); }
+    .btn-orange{background:linear-gradient(135deg,#FF6B1A,#FF8C42);transition:box-shadow .25s,transform .25s}
+    .btn-orange:hover{box-shadow:0 0 26px rgba(255,107,26,.55);transform:translateY(-2px)}
+    .btn-gold{background:linear-gradient(135deg,#C8A840,#E0BA4A);transition:box-shadow .25s,transform .25s}
+    .btn-gold:hover{box-shadow:0 0 26px rgba(200,168,64,.5);transform:translateY(-2px)}
+    .btn-outline-orange{border:1px solid rgba(255,107,26,.45);color:#FF6B1A;transition:all .25s}
+    .btn-outline-orange:hover{background:rgba(255,107,26,.1);border-color:#FF6B1A;box-shadow:0 0 18px rgba(255,107,26,.3);transform:translateY(-2px)}
 
-    .btn-gold {
-      background: linear-gradient(135deg,#C8A840,#E0BA4A);
-      transition: box-shadow .25s, transform .25s;
-    }
-    .btn-gold:hover { box-shadow: 0 0 26px rgba(200,168,64,.5); transform: translateY(-2px); }
+    /* ── Cards ── */
+    .card-hover{transition:transform .3s,border-color .3s,box-shadow .3s}
+    .card-hover:hover{transform:translateY(-5px);border-color:rgba(255,107,26,.3)!important;box-shadow:0 12px 40px rgba(0,0,0,.45)}
 
-    .btn-outline-orange {
-      border: 1px solid rgba(255,107,26,.45);
-      color: #FF6B1A;
-      transition: background .25s, border-color .25s, box-shadow .25s, transform .25s;
-    }
-    .btn-outline-orange:hover {
-      background: rgba(255,107,26,.1);
-      border-color: #FF6B1A;
-      box-shadow: 0 0 18px rgba(255,107,26,.3);
-      transform: translateY(-2px);
-    }
+    /* ── Divider ── */
+    .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,107,26,.35),transparent);max-width:1100px;margin:0 auto}
 
-    /* ── Card hover ── */
-    .card-hover { transition: transform .3s, border-color .3s, box-shadow .3s; }
-    .card-hover:hover {
-      transform: translateY(-5px);
-      border-color: rgba(255,107,26,.3) !important;
-      box-shadow: 0 12px 40px rgba(0,0,0,.45);
-    }
+    /* ── Nav links ── */
+    .nav-link{position:relative;color:#9CA3AF;font-size:.875rem;font-weight:500;transition:color .2s}
+    .nav-link::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:1px;background:#FF6B1A;transition:width .3s}
+    .nav-link:hover{color:#F0F0F0}.nav-link:hover::after{width:100%}
+    .nav-link.active{color:#FF6B1A}.nav-link.active::after{width:100%}
 
-    /* ── Section divider ── */
-    .divider {
-      height: 1px;
-      background: linear-gradient(90deg,transparent,rgba(255,107,26,.35),transparent);
-      margin: 0 auto;
-      max-width: 1100px;
-    }
+    /* ── Misc ── */
+    .mobile-menu{background:rgba(11,14,20,.97);border-bottom:1px solid rgba(255,255,255,.06)}
+    .foot-link{color:#4B5563;font-size:.75rem;transition:color .2s}.foot-link:hover{color:#FF6B1A}
+    @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.4}}
+    .live-dot{animation:pulse-dot 2s ease-in-out infinite}
+    .nl-input{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#F0F0F0;border-radius:.75rem;padding:.625rem 1rem;font-size:.875rem;outline:none;transition:border-color .25s;width:100%}
+    .nl-input::placeholder{color:#4B5563}.nl-input:focus{border-color:#FF6B1A}
+    .bybit-card{background:rgba(240,185,11,.05);border:1px solid rgba(240,185,11,.2)}
+    .binance-card{background:rgba(200,168,64,.05);border:1px solid rgba(200,168,64,.2)}
+    .ad-unit{width:100%;overflow:hidden;padding:8px 0;text-align:center}
+    .ad-unit .ad-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#374151;margin-bottom:4px}
+    .adsbygoogle{display:block}
 
-    /* ── Nav link underline ── */
-    .nav-link {
-      position: relative; color: #9CA3AF;
-      font-size: .875rem; font-weight: 500;
-      transition: color .2s;
-    }
-    .nav-link::after {
-      content:''; position:absolute; bottom:-5px; left:0;
-      width:0; height:1px; background:#FF6B1A;
-      transition: width .3s ease;
-    }
-    .nav-link:hover { color: #F0F0F0; }
-    .nav-link:hover::after { width: 100%; }
-    .nav-link.active { color: #FF6B1A; }
-    .nav-link.active::after { width: 100%; }
+    /* ══════════════════════════════════════════════════════
+       AUTH MODAL STYLES
+    ══════════════════════════════════════════════════════ */
+    .modal-overlay{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:1rem;background:rgba(0,0,0,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .modal-overlay.open{display:flex}
 
-    /* ── Live pulse ── */
-    @keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:.45} }
-    .live-dot { animation: pulse-dot 2s ease-in-out infinite; }
+    .auth-card{background:#111520;border:1px solid rgba(255,107,26,.22);border-radius:1.5rem;padding:2.25rem 2rem;width:100%;max-width:420px;position:relative;overflow:hidden}
+    .auth-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#C8A840,#FF6B1A,#C8A840)}
 
-    /* ── Affiliate cards ── */
-    .bybit-card {
-      background: rgba(240,185,11,.05);
-      border: 1px solid rgba(240,185,11,.2);
-    }
-    .binance-card {
-      background: rgba(200,168,64,.05);
-      border: 1px solid rgba(200,168,64,.2);
-    }
+    .auth-tab-row{display:flex;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:1.75rem}
+    .auth-tab{flex:1;padding:.625rem;font-size:.875rem;font-weight:600;color:#6B7280;border-bottom:2px solid transparent;transition:all .2s;cursor:pointer;background:none;border-left:none;border-right:none;border-top:none;text-align:center}
+    .auth-tab.active{color:#FF6B1A;border-bottom-color:#FF6B1A}
 
-    /* ── Modal ── */
-    .modal-bg {
-      background: rgba(0,0,0,.88);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-    .modal-box {
-      background: #111520;
-      border: 1px solid rgba(255,107,26,.2);
-      border-radius: 1.25rem;
-    }
-    .modal-box h3 { color: #F0F0F0; font-weight: 600; font-size: 1rem; margin-top: 1.25rem; }
-    .modal-box p  { color: #9CA3AF; font-size: .875rem; line-height: 1.7; }
+    .auth-field{margin-bottom:1.125rem}
+    .auth-label{display:block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#6B7280;margin-bottom:.5rem}
+    .auth-input{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:.75rem;padding:.75rem 1rem;font-size:.9rem;color:#F0F0F0;outline:none;transition:all .22s;font-family:'Inter',sans-serif}
+    .auth-input:focus{border-color:#FF6B1A;background:rgba(255,107,26,.04);box-shadow:0 0 0 3px rgba(255,107,26,.1)}
+    .auth-input::placeholder{color:#374151}
 
-    /* ── Mobile menu ── */
-    .mobile-menu {
-      background: rgba(11,14,20,.97);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
+    .auth-submit{width:100%;padding:.875rem;border:none;border-radius:.875rem;font-family:'Space Grotesk',sans-serif;font-size:.875rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#0B0E14;cursor:pointer;background:linear-gradient(135deg,#E8C860,#C8A840 45%,#FF6B1A);transition:box-shadow .25s,transform .2s,filter .2s;margin-top:.25rem}
+    .auth-submit:hover{box-shadow:0 0 28px rgba(255,107,26,.5);transform:translateY(-2px);filter:brightness(1.06)}
+    .auth-submit:disabled{opacity:.55;cursor:not-allowed;transform:none}
 
-    /* ── Footer link ── */
-    .foot-link {
-      color: #4B5563;
-      font-size: .75rem;
-      transition: color .2s;
-    }
-    .foot-link:hover { color: #FF6B1A; }
+    .auth-error{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.28);border-radius:.75rem;padding:.75rem 1rem;color:#f87171;font-size:.8125rem;font-weight:600;margin-bottom:1rem;display:none}
+    .auth-success{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.28);border-radius:.75rem;padding:.75rem 1rem;color:#4ade80;font-size:.8125rem;font-weight:600;margin-bottom:1rem;display:none}
 
-    /* ── Newsletter input ── */
-    .nl-input {
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.1);
-      color: #F0F0F0;
-      border-radius: .75rem;
-      padding: .625rem 1rem;
-      font-size: .875rem;
-      outline: none;
-      transition: border-color .25s;
-      width: 100%;
-    }
-    .nl-input::placeholder { color: #4B5563; }
-    .nl-input:focus { border-color: #FF6B1A; }
+    /* ── User dropdown ── */
+    .user-dropdown{position:absolute;top:calc(100% + 8px);right:0;background:#111520;border:1px solid rgba(255,255,255,.1);border-radius:.875rem;padding:.5rem;min-width:180px;z-index:100;box-shadow:0 12px 32px rgba(0,0,0,.5)}
+    .user-dropdown a,.user-dropdown button{display:flex;align-items:center;gap:.625rem;width:100%;padding:.5rem .75rem;border-radius:.5rem;font-size:.8125rem;color:#9CA3AF;transition:all .2s;background:none;border:none;cursor:pointer;text-align:left}
+    .user-dropdown a:hover,.user-dropdown button:hover{background:rgba(255,255,255,.06);color:#F0F0F0}
 
-    /* ── AdSense ad unit wrapper ── */
-    .ad-unit {
-      width: 100%; overflow: hidden;
-      padding: 8px 0;
-      text-align: center;
+    /* ══════════════════════════════════════════════════════
+       AI BOT MODAL STYLES
+    ══════════════════════════════════════════════════════ */
+    .bot-modal-card{background:#0f1420;border:1px solid rgba(200,168,64,.2);border-radius:1.5rem;width:100%;max-width:860px;height:90vh;max-height:820px;display:flex;flex-direction:column;overflow:hidden;position:relative}
+    .bot-modal-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#FF6B1A,#C8A840,#38bdf8,#C8A840,#FF6B1A);background-size:200%;animation:shimmer 4s linear infinite}
+    @keyframes shimmer{0%{background-position:200%}100%{background-position:-200%}}
+
+    .bot-header{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0}
+
+    .bot-tabs{display:flex;border-bottom:1px solid rgba(255,255,255,.07);flex-shrink:0;overflow-x:auto;scrollbar-width:none}
+    .bot-tabs::-webkit-scrollbar{display:none}
+    .bot-tab{display:flex;align-items:center;gap:.5rem;padding:.875rem 1.25rem;font-size:.8125rem;font-weight:600;color:#6B7280;border-bottom:2px solid transparent;transition:all .2s;cursor:pointer;white-space:nowrap;flex-shrink:0;background:none;border-left:none;border-right:none;border-top:none}
+    .bot-tab:hover{color:#9CA3AF}
+    .bot-tab.active{color:#FF6B1A;border-bottom-color:#FF6B1A;background:rgba(255,107,26,.05)}
+
+    /* ── Chat area ── */
+    #chatMessages{flex:1;overflow-y:auto;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.875rem;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.08) transparent}
+    #chatMessages::-webkit-scrollbar{width:4px}
+    #chatMessages::-webkit-scrollbar-thumb{background:rgba(255,255,255,.08);border-radius:4px}
+
+    .chat-welcome{text-align:center;padding:2.5rem 1rem;color:#4B5563;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .chat-welcome .w-icon{font-size:2.75rem;margin-bottom:.875rem}
+    .chat-welcome .w-name{font-family:'Space Grotesk',sans-serif;font-size:1.125rem;font-weight:700;color:#F0F0F0;margin-bottom:.5rem}
+    .chat-welcome .w-desc{font-size:.8125rem;line-height:1.7;max-width:360px}
+
+    .chat-msg{display:flex;align-items:flex-end;gap:.625rem}
+    .chat-msg-user{flex-direction:row-reverse}
+
+    .chat-bubble{padding:.75rem 1rem;border-radius:1rem;max-width:78%;font-size:.875rem;line-height:1.65;word-break:break-word}
+    .chat-bubble-user{background:linear-gradient(135deg,#FF6B1A,#FF8C42);color:#fff;border-bottom-right-radius:.25rem}
+    .chat-bubble-bot{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);color:#E5E7EB;border-bottom-left-radius:.25rem}
+
+    .chat-avatar{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:.875rem;flex-shrink:0}
+    .chat-time{font-size:.6rem;color:rgba(255,255,255,.3);margin-top:.3rem}
+    .chat-msg-user .chat-time{text-align:right}
+
+    /* ── Typing indicator ── */
+    .typing-dots{display:flex;gap:4px;align-items:center;padding:.25rem 0}
+    .typing-dots span{width:6px;height:6px;border-radius:50%;background:#6B7280;animation:typebounce 1.4s infinite}
+    .typing-dots span:nth-child(2){animation-delay:.2s}
+    .typing-dots span:nth-child(3){animation-delay:.4s}
+    @keyframes typebounce{0%,80%,100%{opacity:.2;transform:scale(.75)}40%{opacity:1;transform:scale(1)}}
+
+    /* ── Chat input area ── */
+    .chat-input-area{padding:1rem 1.5rem;border-top:1px solid rgba(255,255,255,.07);display:flex;gap:.75rem;align-items:flex-end;flex-shrink:0;background:rgba(11,14,20,.6)}
+    .chat-input{flex:1;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:.875rem;padding:.75rem 1rem;font-size:.875rem;color:#F0F0F0;outline:none;resize:none;max-height:120px;font-family:'Inter',sans-serif;transition:border-color .22s;scrollbar-width:none}
+    .chat-input:focus{border-color:rgba(255,107,26,.5);background:rgba(255,107,26,.03)}
+    .chat-input::placeholder{color:#374151}
+    .chat-input::-webkit-scrollbar{display:none}
+
+    .send-btn{width:44px;height:44px;border-radius:.875rem;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;background:linear-gradient(135deg,#FF6B1A,#FF8C42);color:#fff;font-size:.875rem;transition:all .2s}
+    .send-btn:hover{box-shadow:0 0 18px rgba(255,107,26,.5);transform:scale(1.06)}
+    .send-btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+
+    /* ── Bot login required ── */
+    .bot-login-prompt{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;padding:2rem;text-align:center}
+
+    /* ── Responsive ── */
+    @media(max-width:640px){
+      .auth-card{padding:1.75rem 1.25rem}
+      .bot-modal-card{height:100vh;max-height:100vh;border-radius:0}
+      .bot-tab{padding:.75rem .875rem;font-size:.75rem}
+      .chat-bubble{max-width:88%}
     }
-    .ad-unit .ad-label {
-      font-size: .65rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: #374151;
-      margin-bottom: 4px;
-    }
-    .adsbygoogle { display: block; }
   </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════
      STICKY NAVBAR
-═══════════════════════════════════════════ -->
+═══════════════════════════════════════════════════════════ -->
 <nav class="glass-nav fixed top-0 inset-x-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
 
     <!-- Logo -->
     <a href="index.html" class="flex items-center gap-2 shrink-0">
-      <div class="btn-orange w-8 h-8 rounded-lg flex items-center justify-center">
-        <i class="fas fa-chart-line text-white text-xs"></i>
-      </div>
-      <span class="font-display font-bold text-lg tracking-tight">
-        <span class="text-white">Cryp</span><span class="grad-orange"> Talk</span>
-      </span>
+      <div class="btn-orange w-8 h-8 rounded-lg flex items-center justify-center"><i class="fas fa-chart-line text-white text-xs"></i></div>
+      <span class="font-display font-bold text-lg"><span class="text-white">Cryp</span><span class="grad-orange"> Talk</span></span>
     </a>
 
-    <!-- Desktop Nav -->
-    <div class="hidden md:flex items-center gap-8">
+    <!-- Desktop nav links -->
+    <div class="hidden lg:flex items-center gap-7">
       <a href="index.html"      class="nav-link active">Home</a>
       <a href="indicators.html" class="nav-link">Indicators</a>
       <a href="books.html"      class="nav-link">Books</a>
@@ -233,471 +196,354 @@
       <a href="exchanges.html"  class="nav-link">Exchanges</a>
     </div>
 
-    <!-- Desktop Social + CTA -->
-    <div class="hidden md:flex items-center gap-4">
-      <a href="#" aria-label="Follow on X" class="text-gray-500 hover:text-white transition-colors text-lg"><i class="fab fa-x-twitter"></i></a>
-      <a href="https://t.me/+4YJAl87_6JA4NzQ1" target="_blank" rel="noopener" aria-label="Join Telegram" class="text-gray-500 hover:text-blue-400 transition-colors text-lg"><i class="fab fa-telegram"></i></a>
-      <a href="https://youtube.com/@cryp_talk7" target="_blank" rel="noopener" aria-label="Watch on YouTube" class="text-gray-500 hover:text-red-500 transition-colors text-lg"><i class="fab fa-youtube"></i></a>
-      <a href="#" class="btn-orange text-white text-xs font-semibold px-4 py-2 rounded-lg ml-1">Subscribe Free</a>
+    <!-- Desktop right area -->
+    <div class="hidden md:flex items-center gap-3">
+      <!-- Social icons -->
+      <a href="https://t.me/+4YJAl87_6JA4NzQ1" target="_blank" rel="noopener" class="text-gray-500 hover:text-blue-400 transition-colors text-lg"><i class="fab fa-telegram"></i></a>
+      <a href="https://youtube.com/@cryp_talk7"  target="_blank" rel="noopener" class="text-gray-500 hover:text-red-500  transition-colors text-lg"><i class="fab fa-youtube"></i></a>
+      <a href="https://linktr.ee/mubratradeing"  target="_blank" rel="noopener" class="text-gray-500 hover:text-green-400 transition-colors text-lg"><i class="fas fa-link"></i></a>
+
+      <!-- AI Bot button -->
+      <button onclick="openBotModal()"
+              class="flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-lg transition-all"
+              style="background:linear-gradient(135deg,rgba(200,168,64,.15),rgba(255,107,26,.12));border:1px solid rgba(200,168,64,.3);color:#C8A840;">
+        <i class="fas fa-robot text-xs"></i> AI Chat
+      </button>
+
+      <!-- Auth area -->
+      <div id="authAreaDesktop" class="flex items-center gap-2">
+        <!-- Not logged in -->
+        <button id="loginBtnDesktop" onclick="openAuthModal('login')"
+                class="btn-orange text-white text-xs font-semibold px-4 py-2 rounded-lg">
+          <i class="fas fa-sign-in-alt mr-1"></i> Login
+        </button>
+        <!-- Logged in (hidden by default) -->
+        <div id="userMenuDesktop" class="relative hidden">
+          <button id="userTriggerDesktop" onclick="toggleUserMenu('desktop')"
+                  class="flex items-center gap-2 text-xs font-semibold px-3 py-2 rounded-lg"
+                  style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#F0F0F0;">
+            <div class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold"
+                 style="background:linear-gradient(135deg,#FF6B1A,#C8A840);color:#0B0E14;" id="userAvatarDesktop">U</div>
+            <span id="userNameDesktop">User</span>
+            <i class="fas fa-chevron-down text-gray-500" style="font-size:.6rem;"></i>
+          </button>
+          <div id="userDropdownDesktop" class="user-dropdown hidden">
+            <a href="#" onclick="openBotModal();toggleUserMenu('desktop');"><i class="fas fa-robot" style="color:#C8A840;"></i> AI Assistant</a>
+            <a href="about.html"><i class="fas fa-user" style="color:#6B7280;"></i> My Account</a>
+            <hr style="border-color:rgba(255,255,255,.06);margin:.375rem 0;">
+            <button onclick="logout()"><i class="fas fa-sign-out-alt" style="color:#f87171;"></i> <span style="color:#f87171;">Sign Out</span></button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Hamburger -->
-    <button id="hambBtn" class="md:hidden p-2 text-gray-400 hover:text-white" aria-label="Toggle navigation">
+    <button id="hambBtn" class="md:hidden p-2 text-gray-400 hover:text-white ml-auto" aria-label="Menu">
       <i id="hambIcon" class="fas fa-bars text-xl"></i>
     </button>
   </div>
 
   <!-- Mobile dropdown -->
-  <div id="mobileMenu" class="mobile-menu hidden md:hidden">
+  <div id="mobileMenu" class="mobile-menu hidden">
     <div class="px-5 py-4 space-y-1">
-      <a href="index.html"      class="block py-2 text-orange-el font-medium text-sm">Home</a>
+      <a href="index.html"      class="block py-2 text-sm font-medium" style="color:#FF6B1A;">Home</a>
       <a href="indicators.html" class="block py-2 text-gray-400 hover:text-white text-sm">Indicators</a>
       <a href="books.html"      class="block py-2 text-gray-400 hover:text-white text-sm">Books</a>
       <a href="calculator.html" class="block py-2 text-gray-400 hover:text-white text-sm">Calculator</a>
       <a href="exchanges.html"  class="block py-2 text-gray-400 hover:text-white text-sm">Exchanges</a>
-      <div class="flex items-center gap-5 pt-3 border-t border-white/10 mt-2">
-        <a href="#" class="text-gray-400 hover:text-white text-xl"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://t.me/+4YJAl87_6JA4NzQ1" target="_blank" rel="noopener" class="text-gray-400 hover:text-blue-400 text-xl"><i class="fab fa-telegram"></i></a>
-        <a href="https://youtube.com/@cryp_talk7" target="_blank" rel="noopener" class="text-gray-400 hover:text-red-500 text-xl"><i class="fab fa-youtube"></i></a>
+
+      <div class="border-t border-white/10 pt-3 mt-2 space-y-2">
+        <button onclick="openBotModal()" class="w-full text-left py-2 text-sm font-semibold flex items-center gap-2" style="color:#C8A840;">
+          <i class="fas fa-robot"></i> AI Trading Assistant
+        </button>
+        <!-- Not logged in mobile -->
+        <button id="loginBtnMobile" onclick="openAuthModal('login')" class="w-full btn-orange text-white text-sm font-semibold px-4 py-2.5 rounded-xl">
+          <i class="fas fa-sign-in-alt mr-1"></i> Login / Sign Up
+        </button>
+        <!-- Logged in mobile (hidden) -->
+        <div id="userMenuMobile" class="hidden space-y-1">
+          <div class="flex items-center gap-2 py-2">
+            <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold"
+                 style="background:linear-gradient(135deg,#FF6B1A,#C8A840);color:#0B0E14;" id="userAvatarMobile">U</div>
+            <span id="userNameMobile" class="text-sm text-white font-medium">User</span>
+          </div>
+          <button onclick="logout()" class="text-sm text-red-400 flex items-center gap-2 py-1.5">
+            <i class="fas fa-sign-out-alt"></i> Sign Out
+          </button>
+        </div>
+
+        <div class="flex items-center gap-5 pt-2">
+          <a href="https://t.me/+4YJAl87_6JA4NzQ1" target="_blank" rel="noopener" class="text-gray-400 hover:text-blue-400 text-xl"><i class="fab fa-telegram"></i></a>
+          <a href="https://youtube.com/@cryp_talk7"  target="_blank" rel="noopener" class="text-gray-400 hover:text-red-500 text-xl"><i class="fab fa-youtube"></i></a>
+          <a href="https://linktr.ee/mubratradeing"  target="_blank" rel="noopener" class="text-gray-400 hover:text-green-400 text-xl"><i class="fas fa-link"></i></a>
+        </div>
       </div>
     </div>
   </div>
 </nav>
 
 
-<!-- ═══════════════════════════════════════════
-     HERO SECTION
-═══════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════ -->
 <section class="pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-
-  <!-- Badge + Heading -->
-  <div class="text-center mb-10">
+  <div class="text-center mb-8">
     <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-5"
          style="background:rgba(255,107,26,.08);border:1px solid rgba(255,107,26,.2);">
-      <span class="w-2 h-2 rounded-full bg-orange-el live-dot"></span>
+      <span class="w-2 h-2 rounded-full live-dot" style="background:#FF6B1A;"></span>
       <span class="text-xs font-semibold tracking-widest uppercase" style="color:#FF6B1A;">Latest Market Analysis</span>
     </div>
     <h1 class="font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-4">
-      Your Edge in<br>
-      <span class="grad-orange">Crypto Markets</span>
+      Your Edge in<br><span class="grad-orange">Crypto Markets</span>
     </h1>
     <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-      Professional-grade analysis, custom TradingView indicators, and data-driven strategies —
-      all in one place. No noise. Just signal.
+      Professional-grade analysis, custom TradingView indicators, AI trading bots, and
+      data-driven strategies — all in one place. No noise. Just signal.
     </p>
   </div>
 
-  <!-- YouTube Player -->
-  <div class="max-w-4xl mx-auto relative">
+  <!-- YouTube player -->
+  <div class="relative max-w-4xl mx-auto">
     <div class="glass-card rounded-2xl p-1.5">
       <div class="relative w-full rounded-xl overflow-hidden" style="padding-bottom:56.25%;">
-        <iframe
-          class="absolute inset-0 w-full h-full"
-          src="https://www.youtube.com/embed/videoseries?list=PLbpi6ZahtOH6Ar_3GPy3workdxnHLdmXT"
-          title="Cryp Talk – Latest Market Analysis"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
+        <iframe class="absolute inset-0 w-full h-full"
+          src="https://www.youtube.com/embed?listType=user_uploads&list=cryp_talk7"
+          title="Cryp Talk – Latest Market Analysis" frameborder="0"
+          allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+          allowfullscreen loading="lazy"></iframe>
       </div>
     </div>
-    <!-- Ambient glow -->
     <div class="absolute -bottom-3 left-1/4 right-1/4 h-8 rounded-full blur-2xl"
          style="background:#FF6B1A;opacity:.12;"></div>
   </div>
 
-  <!-- Quick Stats -->
+  <!-- Stats -->
   <div class="grid grid-cols-3 gap-4 max-w-xl mx-auto mt-12">
-    <div class="text-center">
-      <div class="font-display text-3xl font-bold grad-orange">47K+</div>
-      <div class="text-gray-500 text-xs mt-1">Subscribers</div>
-    </div>
-    <div class="text-center border-x border-white/10">
-      <div class="font-display text-3xl font-bold grad-gold">200+</div>
-      <div class="text-gray-500 text-xs mt-1">Videos Published</div>
-    </div>
-    <div class="text-center">
-      <div class="font-display text-3xl font-bold grad-orange">98%</div>
-      <div class="text-gray-500 text-xs mt-1">Accuracy Rate</div>
-    </div>
+    <div class="text-center"><div class="font-display text-3xl font-bold grad-orange">47K+</div><div class="text-gray-500 text-xs mt-1">Subscribers</div></div>
+    <div class="text-center border-x border-white/10"><div class="font-display text-3xl font-bold grad-gold">200+</div><div class="text-gray-500 text-xs mt-1">Videos Published</div></div>
+    <div class="text-center"><div class="font-display text-3xl font-bold grad-orange">3</div><div class="text-gray-500 text-xs mt-1">AI Trading Bots</div></div>
   </div>
 </section>
 
-<!-- ── AdSense: Responsive Leaderboard – Below Hero ── -->
-<div class="ad-unit max-w-4xl mx-auto px-4 my-2">
-  <p class="ad-label">Advertisement</p>
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-       data-ad-slot="1111111111"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- AdSense -->
+<div class="ad-unit max-w-4xl mx-auto px-4 my-2"><p class="ad-label">Advertisement</p>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
+<div class="divider px-4"></div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
+     AI BOT PROMO BANNER
+═══════════════════════════════════════════════════════════ -->
+<section class="py-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <div class="rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 justify-between"
+       style="background:linear-gradient(135deg,rgba(200,168,64,.1),rgba(255,107,26,.08));border:1px solid rgba(200,168,64,.2);">
+    <div class="flex items-center gap-5">
+      <div class="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shrink-0"
+           style="background:linear-gradient(135deg,rgba(200,168,64,.2),rgba(255,107,26,.15));border:1px solid rgba(200,168,64,.3);">🤖</div>
+      <div>
+        <div class="font-display font-bold text-white text-lg mb-1">AI Trading Assistant — 3 Bots in 1</div>
+        <div class="text-gray-400 text-sm">Risk Management · Trading Psychology · Strategy Evaluator</div>
+      </div>
+    </div>
+    <button onclick="openBotModal()"
+            class="shrink-0 font-semibold px-6 py-3 rounded-xl text-sm text-obsidian transition-all hover:scale-105"
+            style="background:linear-gradient(135deg,#E8C860,#C8A840 50%,#FF6B1A);">
+      <i class="fas fa-robot mr-1.5"></i> Launch AI Chat →
+    </button>
+  </div>
+</section>
 
 <div class="divider px-4"></div>
 
 
-<!-- ═══════════════════════════════════════════
-     STRATEGY & ARTICLES SECTION (AdSense Ready)
-═══════════════════════════════════════════ -->
+<!-- ═══════════════════════════════════════════════════════════
+     STRATEGY & ARTICLES
+═══════════════════════════════════════════════════════════ -->
 <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-
-  <!-- Section Header -->
   <div class="mb-10">
-    <div class="flex items-center gap-3 mb-2">
-      <div class="w-1 h-6 rounded-full" style="background:#FF6B1A;"></div>
-      <span class="text-xs font-semibold tracking-widest uppercase" style="color:#FF6B1A;">Strategy Breakdowns</span>
-    </div>
+    <div class="flex items-center gap-3 mb-2"><div class="w-1 h-6 rounded-full" style="background:#FF6B1A;"></div>
+      <span class="text-xs font-semibold tracking-widest uppercase" style="color:#FF6B1A;">Strategy Breakdowns</span></div>
     <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Coin Analysis &amp; Free PDF Guides</h2>
-    <p class="text-gray-400 mt-2 text-sm max-w-xl">
-      Deep-dive strategy articles paired with downloadable PDF guides. Master each asset's
-      unique market dynamics and build a rules-based trading approach.
-    </p>
+    <p class="text-gray-400 mt-2 text-sm max-w-xl">Deep-dive strategy articles with downloadable PDF guides. Master each asset's unique market dynamics.</p>
   </div>
 
-  <!-- 5 Article Cards + Newsletter Card = 6-item grid -->
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
-    <!-- ▸ BTC -->
+    <!-- BTC -->
     <article class="glass-card card-hover rounded-2xl p-6 flex flex-col gap-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl"
-               style="background:rgba(247,147,26,.14);border:1px solid rgba(247,147,26,.3);">₿</div>
-          <div>
-            <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Bitcoin</div>
-            <div class="font-display font-bold text-white leading-tight">BTC Analysis</div>
-          </div>
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl" style="background:rgba(247,147,26,.14);border:1px solid rgba(247,147,26,.3);">₿</div>
+          <div><div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Bitcoin</div><div class="font-display font-bold text-white">BTC Analysis</div></div>
         </div>
-        <span class="text-xs px-2.5 py-1 rounded-full font-semibold"
-              style="background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.2);">Bullish</span>
+        <span class="text-xs px-2.5 py-1 rounded-full font-semibold" style="background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.2);">Bullish</span>
       </div>
-      <p class="text-gray-400 text-sm leading-relaxed flex-1">
-        Bitcoin is the bellwether of the entire crypto market, and understanding its price structure is
-        foundational to successful trading. Our BTC strategy uses multi-timeframe confluence analysis —
-        combining the monthly chart for macro directional bias, the weekly for trend confirmation, and the
-        4-hour chart for precision entries. We apply Fibonacci retracement zones, volume profile nodes
-        (including the Point of Control and Value Area High/Low), and the 200-day moving average as dynamic
-        support. This free PDF guide covers our exact rules-based system for managing BTC positions through
-        high-volatility cycles, including stop-loss placement relative to key liquidity zones, position
-        sizing methodology, and risk-to-reward targeting strategies used by professional traders.
-      </p>
-      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold
-                         flex items-center justify-center gap-2 mt-auto">
-        <i class="fas fa-file-pdf"></i> Download Free PDF Guide
-      </a>
+      <p class="text-gray-400 text-sm leading-relaxed flex-1">Bitcoin remains the market bellwether. Our BTC strategy uses multi-timeframe confluence — monthly for macro bias, weekly for trend, 4H for entries. We combine Fibonacci zones, volume profile POC, and 200-day MA with liquidity sweep analysis for high-probability setups. The PDF covers exact position sizing, stop placement, and our halving-cycle accumulation framework used by professional traders.</p>
+      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 mt-auto"><i class="fas fa-file-pdf"></i> Download Free PDF Guide</a>
     </article>
 
-    <!-- ▸ ETH -->
+    <!-- ETH -->
     <article class="glass-card card-hover rounded-2xl p-6 flex flex-col gap-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl"
-               style="background:rgba(98,126,234,.14);border:1px solid rgba(98,126,234,.3);">Ξ</div>
-          <div>
-            <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Ethereum</div>
-            <div class="font-display font-bold text-white leading-tight">ETH Analysis</div>
-          </div>
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl" style="background:rgba(98,126,234,.14);border:1px solid rgba(98,126,234,.3);">Ξ</div>
+          <div><div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Ethereum</div><div class="font-display font-bold text-white">ETH Analysis</div></div>
         </div>
-        <span class="text-xs px-2.5 py-1 rounded-full font-semibold"
-              style="background:rgba(234,179,8,.1);color:#eab308;border:1px solid rgba(234,179,8,.2);">Neutral</span>
+        <span class="text-xs px-2.5 py-1 rounded-full font-semibold" style="background:rgba(234,179,8,.1);color:#eab308;border:1px solid rgba(234,179,8,.2);">Neutral</span>
       </div>
-      <p class="text-gray-400 text-sm leading-relaxed flex-1">
-        Ethereum's evolving role as the leading smart contract platform means its price action is uniquely
-        influenced by on-chain metrics — daily active addresses, gas fee velocity, staking flows, and
-        DeFi total value locked (TVL). Our ETH strategy integrates blockchain data analytics directly with
-        technical chart analysis to identify macro accumulation zones and short-term breakout setups. We
-        examine the ETH/BTC ratio to gauge relative strength against Bitcoin, apply order-block theory
-        to identify institutional demand zones, and use fair-value gap (FVG) analysis alongside liquidity
-        sweep identification. The accompanying PDF guide provides a complete framework for trading ETH
-        across different market phases, including how institutional spot ETF flows affect volatility on
-        lower timeframes and the best indicators for catching ETH's explosive momentum moves.
-      </p>
-      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold
-                         flex items-center justify-center gap-2 mt-auto">
-        <i class="fas fa-file-pdf"></i> Download Free PDF Guide
-      </a>
+      <p class="text-gray-400 text-sm leading-relaxed flex-1">ETH price action is uniquely driven by on-chain activity — gas fees, staking flows, and DeFi TVL. Our strategy integrates blockchain data with Smart Money Concepts: order blocks, fair value gaps, and liquidity zones. We track the ETH/BTC ratio for relative strength timing. The PDF covers the complete ETH framework including post-merge dynamics and how spot ETF flows affect volatility on lower timeframes.</p>
+      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 mt-auto"><i class="fas fa-file-pdf"></i> Download Free PDF Guide</a>
     </article>
 
-    <!-- ▸ SOL -->
+    <!-- SOL -->
     <article class="glass-card card-hover rounded-2xl p-6 flex flex-col gap-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold"
-               style="background:rgba(153,69,255,.14);border:1px solid rgba(153,69,255,.3);color:#9945FF;">SOL</div>
-          <div>
-            <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Solana</div>
-            <div class="font-display font-bold text-white leading-tight">SOL Analysis</div>
-          </div>
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold" style="background:rgba(153,69,255,.14);border:1px solid rgba(153,69,255,.3);color:#9945FF;">SOL</div>
+          <div><div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Solana</div><div class="font-display font-bold text-white">SOL Analysis</div></div>
         </div>
-        <span class="text-xs px-2.5 py-1 rounded-full font-semibold"
-              style="background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.2);">Bullish</span>
+        <span class="text-xs px-2.5 py-1 rounded-full font-semibold" style="background:rgba(34,197,94,.1);color:#22c55e;border:1px solid rgba(34,197,94,.2);">Bullish</span>
       </div>
-      <p class="text-gray-400 text-sm leading-relaxed flex-1">
-        Solana has emerged as one of the highest-momentum assets in the crypto ecosystem, making it
-        ideal for trend-following and breakout trading strategies. Our SOL analysis leverages momentum
-        oscillators — including RSI divergences and MACD crossovers on the daily timeframe — combined
-        with parabolic support identification to capture explosive breakout moves with precision. We also
-        track Solana-specific network metrics such as active wallet growth, daily transaction counts, NFT
-        minting volume, and DEX trading activity as leading indicators for price movement. Our free PDF
-        guide outlines the complete SOL trading playbook: how to identify institutional accumulation
-        patterns in quiet markets, set dynamic trailing stops during parabolic uptrends, and protect
-        capital during Solana's characteristically sharp 30–50% retracements within broader bull markets.
-      </p>
-      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold
-                         flex items-center justify-center gap-2 mt-auto">
-        <i class="fas fa-file-pdf"></i> Download Free PDF Guide
-      </a>
+      <p class="text-gray-400 text-sm leading-relaxed flex-1">Solana is the highest-momentum asset in the ecosystem — ideal for trend-following strategies. We use RSI divergences, MACD crossovers, and parabolic support levels combined with Solana-specific metrics: active wallets, DEX volume, and NFT minting activity as leading indicators. The PDF outlines our complete SOL playbook: institutional accumulation patterns, dynamic trailing stops, and capital protection during sharp retracements.</p>
+      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 mt-auto"><i class="fas fa-file-pdf"></i> Download Free PDF Guide</a>
     </article>
 
-    <!-- ── AdSense: In-Feed Ad (between cards) ── -->
-    <div class="ad-unit sm:col-span-2 lg:col-span-3 my-1">
-      <p class="ad-label">Advertisement</p>
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-           data-ad-slot="2222222222"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <!-- In-grid Ad -->
+    <div class="ad-unit sm:col-span-2 lg:col-span-3 my-1"><p class="ad-label">Advertisement</p>
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="2222222222" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
     </div>
 
-    <!-- ▸ DOGE -->
+    <!-- DOGE -->
     <article class="glass-card card-hover rounded-2xl p-6 flex flex-col gap-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl"
-               style="background:rgba(196,165,45,.14);border:1px solid rgba(196,165,45,.3);">🐕</div>
-          <div>
-            <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Dogecoin</div>
-            <div class="font-display font-bold text-white leading-tight">DOGE Analysis</div>
-          </div>
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-xl" style="background:rgba(196,165,45,.14);border:1px solid rgba(196,165,45,.3);">🐕</div>
+          <div><div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Dogecoin</div><div class="font-display font-bold text-white">DOGE Analysis</div></div>
         </div>
-        <span class="text-xs px-2.5 py-1 rounded-full font-semibold"
-              style="background:rgba(249,115,22,.1);color:#f97316;border:1px solid rgba(249,115,22,.2);">Volatile</span>
+        <span class="text-xs px-2.5 py-1 rounded-full font-semibold" style="background:rgba(249,115,22,.1);color:#f97316;border:1px solid rgba(249,115,22,.2);">Volatile</span>
       </div>
-      <p class="text-gray-400 text-sm leading-relaxed flex-1">
-        DOGE is driven by a unique combination of retail sentiment, social media viral catalysts, and
-        high-profile celebrity endorsements — requiring a sentiment-aware, narrative-driven trading
-        approach unlike any other asset. Our DOGE strategy focuses on identifying parabolic extension
-        cycles using historical meme-coin cycle data, key psychological price levels ($0.10, $0.25,
-        $0.50, $1.00), and volume-weighted momentum signals. We monitor social media velocity metrics
-        alongside on-chain whale wallet movements and exchange inflows to time optimal entries before
-        the retail crowd joins. The PDF guide breaks down three distinct DOGE strategies: the breakout
-        scalp for fast-moving traders, the sentiment reversal play for counter-trend positioning, and
-        the long-term meme-cycle accumulation method — each with clearly defined risk parameters and
-        real backtested examples.
-      </p>
-      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold
-                         flex items-center justify-center gap-2 mt-auto">
-        <i class="fas fa-file-pdf"></i> Download Free PDF Guide
-      </a>
+      <p class="text-gray-400 text-sm leading-relaxed flex-1">DOGE requires a sentiment-aware approach unlike any other asset. Our strategy monitors social media velocity, whale wallet movements, and historical meme-cycle data. We target key psychological levels ($0.10, $0.25, $0.50) and use volume-weighted momentum for precision entries. The PDF breaks down three distinct DOGE strategies: the breakout scalp, sentiment reversal, and long-term meme-cycle accumulation — each with defined risk parameters.</p>
+      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 mt-auto"><i class="fas fa-file-pdf"></i> Download Free PDF Guide</a>
     </article>
 
-    <!-- ▸ RENDER -->
+    <!-- RENDER -->
     <article class="glass-card card-hover rounded-2xl p-6 flex flex-col gap-4">
       <div class="flex items-center justify-between">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold"
-               style="background:rgba(255,107,26,.14);border:1px solid rgba(255,107,26,.3);color:#FF6B1A;">RNDR</div>
-          <div>
-            <div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Render</div>
-            <div class="font-display font-bold text-white leading-tight">RENDER Analysis</div>
-          </div>
+          <div class="w-10 h-10 rounded-full flex items-center justify-center text-xs font-bold" style="background:rgba(255,107,26,.14);border:1px solid rgba(255,107,26,.3);color:#FF6B1A;">RNDR</div>
+          <div><div class="text-xs font-semibold text-gray-500 uppercase tracking-widest">Render</div><div class="font-display font-bold text-white">RENDER Analysis</div></div>
         </div>
-        <span class="text-xs px-2.5 py-1 rounded-full font-semibold"
-              style="background:rgba(99,102,241,.1);color:#818cf8;border:1px solid rgba(99,102,241,.2);">AI Sector</span>
+        <span class="text-xs px-2.5 py-1 rounded-full font-semibold" style="background:rgba(99,102,241,.1);color:#818cf8;border:1px solid rgba(99,102,241,.2);">AI Sector</span>
       </div>
-      <p class="text-gray-400 text-sm leading-relaxed flex-1">
-        Render Network represents the powerful convergence of decentralized GPU computing and the
-        accelerating AI/ML infrastructure boom, positioning it as one of the most strategically compelling
-        assets in the Web3 infrastructure sector. Our RENDER analysis blends fundamental narrative
-        momentum — tracking Nvidia GPU partnership developments, Hollywood render job volume on the
-        protocol, and Render Network revenue metrics — with technical breakout analysis on the weekly
-        chart. We model adoption-driven price targets using a comparative analysis framework against
-        traditional cloud compute valuations. The PDF guide teaches you how to position in AI-narrative
-        tokens before mainstream attention arrives, how to manage sector rotation risk when AI stocks
-        cool off, and how to use cross-asset correlation between $NVDA and $RNDR to find high-probability
-        setups in this rapidly growing infrastructure-layer niche.
-      </p>
-      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold
-                         flex items-center justify-center gap-2 mt-auto">
-        <i class="fas fa-file-pdf"></i> Download Free PDF Guide
-      </a>
+      <p class="text-gray-400 text-sm leading-relaxed flex-1">Render Network sits at the intersection of decentralised GPU compute and the AI/ML boom. Our analysis blends Nvidia partnership tracking, protocol revenue metrics, and weekly-chart breakout analysis. We model adoption-driven targets using cloud-compute valuation comparatives. The PDF covers how to position in AI-narrative tokens before mainstream attention, manage sector rotation risk, and use $NVDA correlation to find high-probability RNDR setups.</p>
+      <a href="#" class="btn-outline-orange w-full py-2.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 mt-auto"><i class="fas fa-file-pdf"></i> Download Free PDF Guide</a>
     </article>
 
-    <!-- ▸ Newsletter Card -->
-    <div class="rounded-2xl p-6 flex flex-col gap-4"
-         style="background:linear-gradient(135deg,rgba(255,107,26,.1),rgba(200,168,64,.07));
-                border:1px solid rgba(255,107,26,.2);">
+    <!-- Newsletter -->
+    <div class="rounded-2xl p-6 flex flex-col gap-4" style="background:linear-gradient(135deg,rgba(255,107,26,.1),rgba(200,168,64,.07));border:1px solid rgba(255,107,26,.2);">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full flex items-center justify-center"
-             style="background:rgba(255,107,26,.18);">
-          <i class="fas fa-bell" style="color:#FF6B1A;"></i>
-        </div>
+        <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:rgba(255,107,26,.18);"><i class="fas fa-bell" style="color:#FF6B1A;"></i></div>
         <div class="font-display font-bold text-white text-lg">Free Newsletter</div>
       </div>
-      <p class="text-gray-400 text-sm leading-relaxed flex-1">
-        Get weekly market analysis, indicator alerts, and exclusive PDF strategy guides delivered
-        straight to your inbox. Join 47,000+ traders who rely on Cryp Talk for their edge.
-        No spam. Unsubscribe anytime.
-      </p>
+      <p class="text-gray-400 text-sm leading-relaxed flex-1">Weekly market analysis, indicator alerts, and exclusive PDF strategy guides — free. Join 47,000+ traders who rely on Cryp Talk for their edge.</p>
       <div class="mt-auto space-y-2">
         <input type="email" placeholder="Your email address" class="nl-input" />
-        <button class="btn-orange w-full py-2.5 rounded-xl text-sm font-semibold text-white">
-          Get Free Guides →
-        </button>
+        <button class="btn-orange w-full py-2.5 rounded-xl text-sm font-semibold text-white">Get Free Guides →</button>
       </div>
     </div>
-
-  </div><!-- end grid -->
+  </div>
 </section>
 
-<!-- ── AdSense: Responsive Banner – Below Articles ── -->
-<div class="ad-unit max-w-5xl mx-auto px-4 my-2">
-  <p class="ad-label">Advertisement</p>
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-       data-ad-slot="3333333333"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- AdSense -->
+<div class="ad-unit max-w-5xl mx-auto px-4 my-2"><p class="ad-label">Advertisement</p>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="3333333333" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
-
 <div class="divider px-4"></div>
 
 
-<!-- ═══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════
      AFFILIATE SECTION
-═══════════════════════════════════════════ -->
+═══════════════════════════════════════════════════════════ -->
 <section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-
   <div class="mb-10">
-    <div class="flex items-center gap-3 mb-2">
-      <div class="w-1 h-6 rounded-full" style="background:#C8A840;"></div>
-      <span class="text-xs font-semibold tracking-widest uppercase" style="color:#C8A840;">Trusted Exchanges</span>
-    </div>
+    <div class="flex items-center gap-3 mb-2"><div class="w-1 h-6 rounded-full" style="background:#C8A840;"></div>
+      <span class="text-xs font-semibold tracking-widest uppercase" style="color:#C8A840;">Trusted Exchanges</span></div>
     <h2 class="font-display font-bold text-3xl sm:text-4xl text-white">Start Trading with a Bonus</h2>
-    <p class="text-gray-400 mt-2 text-sm max-w-xl">
-      We only recommend exchanges we personally use and trust. Sign up through our partner links
-      and unlock exclusive welcome bonuses available only to Cryp Talk readers.
-    </p>
+    <p class="text-gray-400 mt-2 text-sm max-w-xl">We only recommend exchanges we personally use. Sign up through our links for exclusive welcome bonuses.</p>
   </div>
-
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
     <!-- Bybit -->
     <div class="bybit-card card-hover rounded-2xl p-8 flex flex-col gap-5">
       <div class="flex items-center justify-between">
         <div class="font-display font-bold text-3xl text-white">Bybit</div>
-        <div class="text-xs px-3 py-1 rounded-full font-semibold"
-             style="background:rgba(240,185,11,.12);color:#F0B90B;border:1px solid rgba(240,185,11,.3);">
-          <i class="fas fa-star mr-1 text-xs"></i> Top Rated
-        </div>
+        <span class="text-xs px-3 py-1 rounded-full font-semibold" style="background:rgba(240,185,11,.12);color:#F0B90B;border:1px solid rgba(240,185,11,.3);"><i class="fas fa-star mr-1 text-xs"></i> Top Rated</span>
       </div>
-      <div>
-        <div class="font-display font-bold text-4xl" style="color:#F0B90B;">Up to $30,000</div>
-        <div class="text-gray-400 text-sm mt-1">Welcome deposit &amp; trading bonus</div>
-      </div>
-      <ul class="space-y-2.5 text-sm text-gray-400">
-        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> 0% maker fees on spot trading pairs</li>
-        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> Up to 100× leverage on perpetual contracts</li>
-        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> Native TradingView charting integration</li>
-        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> Secure cold storage &amp; two-factor authentication</li>
-        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> Copy-trading &amp; automated bot marketplace</li>
+      <div><div class="font-display font-bold text-4xl" style="color:#F0B90B;">Up to $30,000</div><div class="text-gray-400 text-sm mt-1">Welcome deposit &amp; trading bonus</div></div>
+      <ul class="space-y-2 text-sm text-gray-400">
+        <li class="flex items-center gap-2"><i class="fas fa-check text-green-400 text-xs w-3"></i> 0% maker fees on spot trading</li>
+        <li class="flex items-center gap-2"><i class="fas fa-check text-green-400 text-xs w-3"></i> Up to 100× leverage on perpetuals</li>
+        <li class="flex items-center gap-2"><i class="fas fa-check text-green-400 text-xs w-3"></i> Native TradingView charting</li>
+        <li class="flex items-center gap-2"><i class="fas fa-check text-green-400 text-xs w-3"></i> Copy trading marketplace</li>
       </ul>
-      <a href="#" class="btn-gold text-obsidian font-bold py-3 rounded-xl text-center text-sm
-                          flex items-center justify-center gap-2 mt-auto">
+      <a href="YOUR_BYBIT_REFERRAL_LINK_HERE" target="_blank" rel="noopener sponsored"
+         class="btn-gold text-obsidian font-bold py-3 rounded-xl text-center text-sm flex items-center justify-center gap-2 mt-auto">
         Claim Bybit Bonus <i class="fas fa-arrow-right"></i>
       </a>
-      <p class="text-gray-600 text-xs text-center">*Terms &amp; conditions apply. Trade responsibly. Crypto involves risk.</p>
+      <p class="text-gray-600 text-xs text-center">*T&amp;Cs apply. Trade responsibly.</p>
     </div>
-
     <!-- Binance -->
     <div class="binance-card card-hover rounded-2xl p-8 flex flex-col gap-5">
       <div class="flex items-center justify-between">
         <div class="font-display font-bold text-3xl text-white">Binance</div>
-        <div class="text-xs px-3 py-1 rounded-full font-semibold"
-             style="background:rgba(200,168,64,.12);color:#C8A840;border:1px solid rgba(200,168,64,.3);">
-          <i class="fas fa-crown mr-1 text-xs"></i> #1 Worldwide
-        </div>
+        <span class="text-xs px-3 py-1 rounded-full font-semibold" style="background:rgba(200,168,64,.12);color:#C8A840;border:1px solid rgba(200,168,64,.3);"><i class="fas fa-crown mr-1 text-xs"></i> #1 Worldwide</span>
       </div>
-      <div>
-        <div class="font-display font-bold text-4xl" style="color:#C8A840;">20% Fee Discount</div>
-        <div class="text-gray-400 text-sm mt-1">Lifetime trading fee reduction via referral</div>
-      </div>
-      <ul class="space-y-2.5 text-sm text-gray-400">
-        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> World's largest exchange by daily volume</li>
-        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> 350+ trading pairs available 24/7/365</li>
-        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> BNB staking, Launchpad &amp; earn products</li>
-        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> Regulated in multiple major jurisdictions</li>
-        <li class="flex items-center gap-2.5"><i class="fas fa-check text-green-400 text-xs w-3"></i> Lowest fees with BNB token discounts</li>
+      <div><div class="font-display font-bold text-4xl" style="color:#C8A840;">20% Fee Discount</div><div class="text-gray-400 text-sm mt-1">Lifetime trading fee reduction</div></div>
+      <ul class="space-y-2 text-sm text-gray-400">
+        <li class="flex items-center gap-2"><i class="fas fa-check text-green-400 text-xs w-3"></i> World's largest exchange by volume</li>
+        <li class="flex items-center gap-2"><i class="fas fa-check text-green-400 text-xs w-3"></i> 350+ spot pairs available 24/7</li>
+        <li class="flex items-center gap-2"><i class="fas fa-check text-green-400 text-xs w-3"></i> BNB staking and Launchpad access</li>
+        <li class="flex items-center gap-2"><i class="fas fa-check text-green-400 text-xs w-3"></i> SAFU insurance fund</li>
       </ul>
-      <a href="#" class="btn-orange text-white font-bold py-3 rounded-xl text-center text-sm
-                          flex items-center justify-center gap-2 mt-auto">
+      <a href="YOUR_BINANCE_REFERRAL_LINK_HERE" target="_blank" rel="noopener sponsored"
+         class="btn-orange text-white font-bold py-3 rounded-xl text-center text-sm flex items-center justify-center gap-2 mt-auto">
         Sign Up on Binance <i class="fas fa-arrow-right"></i>
       </a>
-      <p class="text-gray-600 text-xs text-center">*Crypto trading involves significant risk. Do your own research.</p>
+      <p class="text-gray-600 text-xs text-center">*Crypto involves significant risk. DYOR.</p>
     </div>
-
   </div>
-
-  <!-- Affiliate disclosure -->
-  <p class="text-center text-gray-600 text-xs mt-6">
-    <i class="fas fa-info-circle mr-1"></i>
-    Affiliate disclosure: Cryp Talk may earn a commission when you sign up via our links. This doesn't affect the price you pay.
-  </p>
+  <p class="text-center text-gray-600 text-xs mt-6"><i class="fas fa-info-circle mr-1"></i> Affiliate disclosure: We may earn a commission when you sign up via our links at no extra cost to you.</p>
 </section>
 
-<!-- ── AdSense: Responsive Banner – Above Footer ── -->
-<div class="ad-unit max-w-5xl mx-auto px-4 my-2">
-  <p class="ad-label">Advertisement</p>
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
-       data-ad-slot="4444444444"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+<!-- AdSense -->
+<div class="ad-unit max-w-5xl mx-auto px-4 my-2"><p class="ad-label">Advertisement</p>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="4444444444" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 </div>
-
 <div class="divider px-4"></div>
 
 
-<!-- ═══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════
      FOOTER
-═══════════════════════════════════════════ -->
+═══════════════════════════════════════════════════════════ -->
 <footer class="py-14 px-4 sm:px-6 lg:px-8">
   <div class="max-w-7xl mx-auto">
-
-    <!-- Top row -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-
-      <!-- Brand -->
-      <div class="lg:col-span-1">
+      <div>
         <a href="index.html" class="flex items-center gap-2 mb-4">
-          <div class="btn-orange w-8 h-8 rounded-lg flex items-center justify-center">
-            <i class="fas fa-chart-line text-white text-xs"></i>
-          </div>
-          <span class="font-display font-bold text-lg">
-            <span class="text-white">Cryp</span><span class="grad-orange"> Talk</span>
-          </span>
+          <div class="btn-orange w-8 h-8 rounded-lg flex items-center justify-center"><i class="fas fa-chart-line text-white text-xs"></i></div>
+          <span class="font-display font-bold text-lg"><span class="text-white">Cryp</span><span class="grad-orange"> Talk</span></span>
         </a>
-        <p class="text-gray-500 text-sm leading-relaxed mb-5">
-          Professional crypto education and market analysis. Not financial advice.
-        </p>
+        <p class="text-gray-500 text-sm leading-relaxed mb-5">Professional crypto education, market analysis and AI trading tools. Not financial advice.</p>
         <div class="flex items-center gap-4">
-          <a href="#" class="text-gray-500 hover:text-white transition-colors text-lg"><i class="fab fa-x-twitter"></i></a>
           <a href="https://t.me/+4YJAl87_6JA4NzQ1" target="_blank" rel="noopener" class="text-gray-500 hover:text-blue-400 transition-colors text-lg"><i class="fab fa-telegram"></i></a>
-          <a href="https://youtube.com/@cryp_talk7" target="_blank" rel="noopener" class="text-gray-500 hover:text-red-500 transition-colors text-lg"><i class="fab fa-youtube"></i></a>
-          <a href="https://linktr.ee/mubratradeing" target="_blank" rel="noopener" class="text-gray-500 hover:text-green-400 transition-colors text-lg" aria-label="Linktree"><i class="fas fa-link"></i></a>
+          <a href="https://youtube.com/@cryp_talk7"  target="_blank" rel="noopener" class="text-gray-500 hover:text-red-500  transition-colors text-lg"><i class="fab fa-youtube"></i></a>
+          <a href="https://linktr.ee/mubratradeing"  target="_blank" rel="noopener" class="text-gray-500 hover:text-green-400 transition-colors text-lg"><i class="fas fa-link"></i></a>
         </div>
       </div>
-
-      <!-- Pages -->
       <div>
         <h4 class="text-white text-xs font-semibold uppercase tracking-widest mb-4">Pages</h4>
         <ul class="space-y-2">
@@ -708,33 +554,22 @@
           <li><a href="exchanges.html"  class="foot-link">Exchanges &amp; Bonuses</a></li>
         </ul>
       </div>
-
-      <!-- Resources -->
       <div>
         <h4 class="text-white text-xs font-semibold uppercase tracking-widest mb-4">Resources</h4>
         <ul class="space-y-2">
-          <li><a href="#" class="foot-link">YouTube Channel</a></li>
-          <li><a href="#" class="foot-link">Telegram Group</a></li>
-          <li><a href="#" class="foot-link">Free PDF Guides</a></li>
-          <li><a href="#" class="foot-link">TradingView Scripts</a></li>
+          <li><a href="https://youtube.com/@cryp_talk7"  target="_blank" rel="noopener" class="foot-link">YouTube Channel</a></li>
+          <li><a href="https://t.me/+4YJAl87_6JA4NzQ1"  target="_blank" rel="noopener" class="foot-link">Telegram Group</a></li>
+          <li><a href="https://linktr.ee/mubratradeing"   target="_blank" rel="noopener" class="foot-link">Linktree</a></li>
+          <li><a href="#" onclick="openBotModal()"                                        class="foot-link">AI Trading Assistant</a></li>
         </ul>
       </div>
-
-      <!-- Disclaimer -->
       <div>
         <h4 class="text-white text-xs font-semibold uppercase tracking-widest mb-4">Disclaimer</h4>
-        <p class="text-gray-600 text-xs leading-relaxed">
-          All content on this site is for educational and informational purposes only.
-          Nothing constitutes financial advice. Crypto markets are highly volatile — always do
-          your own research before investing. Past performance is not indicative of future results.
-        </p>
+        <p class="text-gray-600 text-xs leading-relaxed">All content is for educational purposes only. Nothing constitutes financial advice. Crypto is highly volatile — always do your own research before investing.</p>
       </div>
-
     </div>
-
-    <!-- Bottom row -->
     <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-gray-600 text-xs">© 2025 Cryp Talk · All rights reserved.</p>
+      <p class="text-gray-600 text-xs">© 2025 Cryp Talk · tolkcryp@gmail.com · All rights reserved.</p>
       <div class="flex items-center flex-wrap justify-center gap-x-5 gap-y-2">
         <a href="privacy.html"  class="foot-link">Privacy Policy</a>
         <a href="terms.html"    class="foot-link">Terms of Service</a>
@@ -742,192 +577,588 @@
         <a href="contact.html"  class="foot-link">Contact Us</a>
       </div>
     </div>
-
   </div>
 </footer>
 
 
-<!-- ═══════════════════════════════════════════
-     LEGAL MODALS
-═══════════════════════════════════════════ -->
-<div id="modalOverlay"
-     class="modal-bg fixed inset-0 z-[100] hidden items-center justify-center p-4">
-  <div class="modal-box max-w-2xl w-full p-8 relative max-h-[88vh] overflow-y-auto">
-    <button onclick="closeModal()"
-            class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center
-                   text-gray-500 hover:text-white rounded-lg transition-colors"
-            aria-label="Close modal">
-      <i class="fas fa-times text-lg"></i>
+<!-- ═══════════════════════════════════════════════════════════
+     AUTH MODAL
+═══════════════════════════════════════════════════════════ -->
+<div id="authModal" class="modal-overlay" onclick="if(event.target===this)closeAuthModal()">
+  <div class="auth-card">
+    <!-- Close -->
+    <button onclick="closeAuthModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;color:#6B7280;font-size:1.125rem;cursor:pointer;line-height:1;" aria-label="Close">
+      <i class="fas fa-times"></i>
     </button>
-    <h2 id="modalTitle" class="font-display font-bold text-2xl text-white mb-6"></h2>
-    <div id="modalBody" class="space-y-4"></div>
+
+    <!-- Logo -->
+    <div class="flex items-center gap-2 mb-5">
+      <div class="btn-orange w-7 h-7 rounded-lg flex items-center justify-center"><i class="fas fa-chart-line text-white text-xs"></i></div>
+      <span class="font-display font-bold"><span class="text-white">Cryp</span><span class="grad-orange"> Talk</span></span>
+    </div>
+
+    <!-- Tabs -->
+    <div class="auth-tab-row">
+      <button id="authTabLogin"  class="auth-tab active" onclick="switchAuthTab('login')">Login</button>
+      <button id="authTabSignup" class="auth-tab"        onclick="switchAuthTab('signup')">Sign Up</button>
+    </div>
+
+    <!-- Messages -->
+    <div id="authError"   class="auth-error"></div>
+    <div id="authSuccess" class="auth-success"></div>
+
+    <!-- LOGIN FORM -->
+    <div id="loginFormSection">
+      <div class="auth-field">
+        <label class="auth-label" for="loginEmail">Email Address</label>
+        <input type="email" id="loginEmail" class="auth-input" placeholder="you@example.com"
+               onkeydown="if(event.key==='Enter')handleLogin()" />
+      </div>
+      <div class="auth-field">
+        <label class="auth-label" for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" class="auth-input" placeholder="••••••••"
+               onkeydown="if(event.key==='Enter')handleLogin()" />
+      </div>
+      <button id="loginSubmitBtn" onclick="handleLogin()" class="auth-submit" data-label="Login to Cryp Talk">
+        Login to Cryp Talk
+      </button>
+      <p class="text-center text-xs text-gray-600 mt-3">
+        Don't have an account?
+        <button onclick="switchAuthTab('signup')" style="color:#FF6B1A;background:none;border:none;cursor:pointer;font-size:inherit;">Sign up free</button>
+      </p>
+    </div>
+
+    <!-- SIGNUP FORM -->
+    <div id="signupFormSection" class="hidden">
+      <div class="auth-field">
+        <label class="auth-label" for="signupEmail">Email Address</label>
+        <input type="email" id="signupEmail" class="auth-input" placeholder="you@example.com" />
+      </div>
+      <div class="auth-field">
+        <label class="auth-label" for="signupPassword">Password</label>
+        <input type="password" id="signupPassword" class="auth-input" placeholder="Min 6 characters" />
+      </div>
+      <div class="auth-field">
+        <label class="auth-label" for="signupConfirm">Confirm Password</label>
+        <input type="password" id="signupConfirm" class="auth-input" placeholder="Re-enter password"
+               onkeydown="if(event.key==='Enter')handleSignup()" />
+      </div>
+      <button id="signupSubmitBtn" onclick="handleSignup()" class="auth-submit" data-label="Create Free Account">
+        Create Free Account
+      </button>
+      <p class="text-center text-xs text-gray-600 mt-3">
+        Already have an account?
+        <button onclick="switchAuthTab('login')" style="color:#FF6B1A;background:none;border:none;cursor:pointer;font-size:inherit;">Login here</button>
+      </p>
+    </div>
   </div>
 </div>
 
 
-<!-- ═══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════════════════
+     AI BOT MODAL
+═══════════════════════════════════════════════════════════ -->
+<div id="botModal" class="modal-overlay" onclick="if(event.target===this)closeBotModal()">
+  <div class="bot-modal-card">
+
+    <!-- Header -->
+    <div class="bot-header">
+      <div>
+        <div class="font-display font-bold text-white text-base" id="botNameDisplay">🤖 Risk Management Bot</div>
+        <div class="text-xs text-gray-500 mt-0.5" id="botDescDisplay">Position sizing, stop-loss, portfolio risk</div>
+      </div>
+      <div class="flex items-center gap-3">
+        <!-- User badge (shown when logged in) -->
+        <div id="botUserBadge" class="hidden items-center gap-1.5 text-xs px-2.5 py-1 rounded-full"
+             style="background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);color:#22c55e;">
+          <i class="fas fa-circle text-xs"></i> <span id="botUserEmail"></span>
+        </div>
+        <button onclick="closeBotModal()" style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:.625rem;width:32px;height:32px;color:#9CA3AF;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bot Tabs -->
+    <div class="bot-tabs" id="botTabsBar">
+      <button id="botTab_risk"       class="bot-tab active" onclick="switchBot('risk')">        🤖 Risk Management</button>
+      <button id="botTab_psychology" class="bot-tab"        onclick="switchBot('psychology')">  🧠 Psychology Coach</button>
+      <button id="botTab_strategy"   class="bot-tab"        onclick="switchBot('strategy')">    📊 Strategy Evaluator</button>
+    </div>
+
+    <!-- Login Required (shown when not logged in) -->
+    <div id="botLoginRequired" class="bot-login-prompt hidden">
+      <div style="font-size:2.5rem;margin-bottom:1rem;">🔒</div>
+      <div class="font-display font-bold text-white text-lg mb-2">Login Required</div>
+      <p class="text-gray-400 text-sm max-w-xs mb-5 leading-relaxed">Create a free Cryp Talk account to access the AI Trading Assistant and save your chat history.</p>
+      <div class="flex gap-3">
+        <button onclick="openAuthModal('signup')" class="btn-orange text-white font-semibold px-5 py-2.5 rounded-xl text-sm">Create Free Account</button>
+        <button onclick="openAuthModal('login')"  style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:.75rem;padding:.625rem 1.25rem;font-size:.875rem;color:#9CA3AF;cursor:pointer;">Login</button>
+      </div>
+    </div>
+
+    <!-- Chat Messages (scrollable) -->
+    <div id="chatMessages" class="hidden" style="flex:1;overflow-y:auto;padding:1.25rem 1.5rem;display:flex;flex-direction:column;gap:.875rem;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.08) transparent;"></div>
+
+    <!-- Chat Input -->
+    <div id="chatInputArea" class="chat-input-area hidden">
+      <textarea id="messageInput" class="chat-input" placeholder="Ask your question… (Enter to send)"
+                rows="1" oninput="autoResize(this)"
+                onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage();}"></textarea>
+      <button id="sendBtn" onclick="sendMessage()" class="send-btn" title="Send message">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════════
      JAVASCRIPT
-═══════════════════════════════════════════ -->
+═══════════════════════════════════════════════════════════ -->
 <script>
-/* ── Mobile Menu ── */
-const hambBtn  = document.getElementById('hambBtn');
+'use strict';
+
+/* ─── CONFIG ─────────────────────────────────────────────────────────── */
+// 🔴 Replace with your actual Cloudflare Worker API URL after deploying
+const WORKER_URL = 'https://cryp-talk-api.YOUR-SUBDOMAIN.workers.dev';
+
+/* ─── STATE ──────────────────────────────────────────────────────────── */
+let authToken   = localStorage.getItem('ct_token') || null;
+let currentUser = null;
+let currentBot  = 'risk';
+let isSending   = false;
+const chatCache = { risk: [], psychology: [], strategy: [] };
+
+try { currentUser = JSON.parse(localStorage.getItem('ct_user') || 'null'); } catch {}
+
+/* ─── BOT META ───────────────────────────────────────────────────────── */
+const BOT_META = {
+  risk:       { icon: '🤖', name: 'Risk Management Bot',    desc: 'Position sizing, stop-loss, portfolio risk' },
+  psychology: { icon: '🧠', name: 'Trading Psychology Coach', desc: 'Fear, greed, discipline, mental frameworks' },
+  strategy:   { icon: '📊', name: 'Strategy Evaluator',      desc: 'Analyse & improve your trading strategies' },
+};
+
+/* ════════════════════════════════════════════════════════════════════════
+   AUTH FUNCTIONS
+════════════════════════════════════════════════════════════════════════ */
+
+function setAuth(token, user) {
+  authToken   = token;
+  currentUser = user;
+  localStorage.setItem('ct_token', token);
+  localStorage.setItem('ct_user', JSON.stringify(user));
+  updateNavAuth();
+}
+
+function clearAuth() {
+  authToken   = null;
+  currentUser = null;
+  localStorage.removeItem('ct_token');
+  localStorage.removeItem('ct_user');
+  chatCache.risk = []; chatCache.psychology = []; chatCache.strategy = [];
+  updateNavAuth();
+}
+
+function updateNavAuth() {
+  const isLoggedIn = !!(currentUser && authToken);
+  const displayName = currentUser ? currentUser.email.split('@')[0] : '';
+  const initial     = displayName ? displayName[0].toUpperCase() : 'U';
+
+  // Desktop
+  const loginDesk = document.getElementById('loginBtnDesktop');
+  const userDesk  = document.getElementById('userMenuDesktop');
+  if (loginDesk) loginDesk.classList.toggle('hidden', isLoggedIn);
+  if (userDesk)  userDesk.classList.toggle('hidden', !isLoggedIn);
+  const nameDesk   = document.getElementById('userNameDesktop');
+  const avatarDesk = document.getElementById('userAvatarDesktop');
+  if (nameDesk)   nameDesk.textContent   = displayName;
+  if (avatarDesk) avatarDesk.textContent = initial;
+
+  // Mobile
+  const loginMob = document.getElementById('loginBtnMobile');
+  const userMob  = document.getElementById('userMenuMobile');
+  if (loginMob) loginMob.classList.toggle('hidden', isLoggedIn);
+  if (userMob)  userMob.classList.toggle('hidden', !isLoggedIn);
+  const nameMob   = document.getElementById('userNameMobile');
+  const avatarMob = document.getElementById('userAvatarMobile');
+  if (nameMob)   nameMob.textContent   = currentUser ? currentUser.email : '';
+  if (avatarMob) avatarMob.textContent = initial;
+
+  // Bot modal badge
+  const badge     = document.getElementById('botUserBadge');
+  const badgeEmail = document.getElementById('botUserEmail');
+  if (badge) {
+    if (isLoggedIn) { badge.classList.remove('hidden'); badge.classList.add('flex'); }
+    else              badge.classList.add('hidden');
+  }
+  if (badgeEmail && currentUser) badgeEmail.textContent = currentUser.email;
+}
+
+/* ── Sign Up ── */
+async function handleSignup() {
+  const email   = document.getElementById('signupEmail').value.trim();
+  const pw      = document.getElementById('signupPassword').value;
+  const confirm = document.getElementById('signupConfirm').value;
+  clearAuthMsg();
+
+  if (!email || !pw)      return showAuthErr('Email and password are required.');
+  if (pw !== confirm)     return showAuthErr('Passwords do not match.');
+  if (pw.length < 6)      return showAuthErr('Password must be at least 6 characters.');
+
+  setAuthBusy(true, 'signupSubmitBtn', 'Creating account…');
+  try {
+    const res  = await fetch(`${WORKER_URL}/api/signup`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password: pw }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Signup failed');
+    setAuth(data.token, data.user);
+    showAuthOk('Account created! Welcome to Cryp Talk 🎉');
+    setTimeout(closeAuthModal, 1400);
+  } catch (e) {
+    showAuthErr(e.message);
+  } finally {
+    setAuthBusy(false, 'signupSubmitBtn', 'Create Free Account');
+  }
+}
+
+/* ── Login ── */
+async function handleLogin() {
+  const email = document.getElementById('loginEmail').value.trim();
+  const pw    = document.getElementById('loginPassword').value;
+  clearAuthMsg();
+  if (!email || !pw) return showAuthErr('Email and password are required.');
+
+  setAuthBusy(true, 'loginSubmitBtn', 'Signing in…');
+  try {
+    const res  = await fetch(`${WORKER_URL}/api/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password: pw }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Login failed');
+    setAuth(data.token, data.user);
+    showAuthOk('Welcome back! 👋');
+    setTimeout(closeAuthModal, 1200);
+  } catch (e) {
+    showAuthErr(e.message);
+  } finally {
+    setAuthBusy(false, 'loginSubmitBtn', 'Login to Cryp Talk');
+  }
+}
+
+function logout() {
+  clearAuth();
+  const dd = document.getElementById('userDropdownDesktop');
+  if (dd) dd.classList.add('hidden');
+  // If bot modal open, refresh its state
+  if (!document.getElementById('botModal').classList.contains('modal-overlay') ||
+      document.getElementById('botModal').classList.contains('open')) {
+    showBotAuthGate();
+  }
+}
+
+/* ── Auth UI helpers ── */
+function openAuthModal(tab = 'login') {
+  document.getElementById('authModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  switchAuthTab(tab);
+  clearAuthMsg();
+}
+function closeAuthModal() {
+  document.getElementById('authModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function switchAuthTab(tab) {
+  clearAuthMsg();
+  document.getElementById('loginFormSection').classList.toggle('hidden', tab !== 'login');
+  document.getElementById('signupFormSection').classList.toggle('hidden', tab !== 'signup');
+  document.getElementById('authTabLogin').classList.toggle('active', tab === 'login');
+  document.getElementById('authTabSignup').classList.toggle('active', tab === 'signup');
+}
+function showAuthErr(msg) {
+  const el = document.getElementById('authError');
+  el.textContent = msg; el.style.display = 'block';
+}
+function showAuthOk(msg) {
+  const el = document.getElementById('authSuccess');
+  el.textContent = msg; el.style.display = 'block';
+}
+function clearAuthMsg() {
+  document.getElementById('authError').style.display   = 'none';
+  document.getElementById('authSuccess').style.display = 'none';
+}
+function setAuthBusy(busy, btnId, label) {
+  const btn = document.getElementById(btnId);
+  if (!btn) return;
+  btn.disabled    = busy;
+  btn.textContent = busy ? label : btn.getAttribute('data-label');
+}
+
+/* ── User dropdown ── */
+function toggleUserMenu(scope) {
+  const dd = document.getElementById(`userDropdown${scope === 'desktop' ? 'Desktop' : 'Mobile'}`);
+  if (dd) dd.classList.toggle('hidden');
+}
+document.addEventListener('click', e => {
+  const trigger = document.getElementById('userTriggerDesktop');
+  const dd      = document.getElementById('userDropdownDesktop');
+  if (dd && trigger && !trigger.contains(e.target) && !dd.contains(e.target)) {
+    dd.classList.add('hidden');
+  }
+});
+
+/* ════════════════════════════════════════════════════════════════════════
+   AI BOT FUNCTIONS
+════════════════════════════════════════════════════════════════════════ */
+
+function openBotModal() {
+  document.getElementById('botModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (!currentUser || !authToken) {
+    showBotAuthGate();
+  } else {
+    showBotChat();
+    switchBot(currentBot, false);
+  }
+}
+function closeBotModal() {
+  document.getElementById('botModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function showBotAuthGate() {
+  document.getElementById('botLoginRequired').classList.remove('hidden');
+  document.getElementById('chatMessages').classList.add('hidden');
+  document.getElementById('chatInputArea').classList.add('hidden');
+}
+function showBotChat() {
+  document.getElementById('botLoginRequired').classList.add('hidden');
+  document.getElementById('chatMessages').classList.remove('hidden');
+  document.getElementById('chatInputArea').classList.remove('hidden');
+}
+
+async function switchBot(type, forceReload = true) {
+  currentBot = type;
+
+  // Update tabs
+  ['risk','psychology','strategy'].forEach(t => {
+    document.getElementById(`botTab_${t}`).classList.toggle('active', t === type);
+  });
+
+  // Update header
+  const meta = BOT_META[type];
+  document.getElementById('botNameDisplay').textContent = `${meta.icon} ${meta.name}`;
+  document.getElementById('botDescDisplay').textContent = meta.desc;
+
+  if (!currentUser || !authToken) return;
+  showBotChat();
+
+  const chatEl = document.getElementById('chatMessages');
+  chatEl.innerHTML = '';
+
+  // Use cache if available and not forcing reload
+  if (!forceReload && chatCache[type].length > 0) {
+    renderChatHistory(chatCache[type]);
+    return;
+  }
+
+  // Fetch from API
+  chatEl.innerHTML = `<div style="text-align:center;color:#4B5563;font-size:.8rem;padding:2rem;">
+    <i class="fas fa-circle-notch fa-spin" style="color:#FF6B1A;margin-bottom:.5rem;display:block;font-size:1.25rem;"></i>
+    Loading history…</div>`;
+
+  try {
+    const res  = await fetch(`${WORKER_URL}/api/history?botType=${type}`, {
+      headers: { 'Authorization': `Bearer ${authToken}` },
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Failed to load history');
+
+    chatCache[type] = data.history || [];
+    chatEl.innerHTML = '';
+
+    if (chatCache[type].length === 0) renderWelcome(type);
+    else renderChatHistory(chatCache[type]);
+
+  } catch (e) {
+    chatEl.innerHTML = '';
+    renderWelcome(type);
+    appendBotBubble(`⚠️ Could not load history: ${e.message}`);
+  }
+}
+
+function renderWelcome(type) {
+  const meta = BOT_META[type];
+  const msgs = {
+    risk:       'Ask me about position sizing, stop-loss placement, risk-to-reward ratios, and protecting your capital.',
+    psychology: 'Share your trading struggles and I\'ll help you build the mental discipline of a professional trader.',
+    strategy:   'Describe your trading strategy and I\'ll objectively analyse its strengths, weaknesses, and improvements.',
+  };
+  const chatEl = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = 'chat-welcome';
+  div.innerHTML = `
+    <div class="w-icon">${meta.icon}</div>
+    <div class="w-name">${meta.name}</div>
+    <div class="w-desc">${msgs[type]}</div>`;
+  chatEl.appendChild(div);
+}
+
+function renderChatHistory(history) {
+  history.forEach(h => {
+    appendUserBubble(h.user_msg, h.created_at);
+    appendBotBubble(h.bot_msg,   h.created_at);
+  });
+}
+
+/* ── Message bubbles ── */
+function appendUserBubble(text, ts = null) {
+  const chatEl = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = 'chat-msg chat-msg-user';
+  div.innerHTML = `
+    <div>
+      <div class="chat-bubble chat-bubble-user">${esc(text)}</div>
+      <div class="chat-time">${fmtTime(ts)}</div>
+    </div>`;
+  chatEl.appendChild(div);
+  scrollBot();
+}
+
+function appendBotBubble(text, ts = null) {
+  const chatEl = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.className = 'chat-msg';
+  div.innerHTML = `
+    <div class="chat-avatar">${BOT_META[currentBot].icon}</div>
+    <div>
+      <div class="chat-bubble chat-bubble-bot">${fmtBot(text)}</div>
+      <div class="chat-time">${fmtTime(ts)}</div>
+    </div>`;
+  chatEl.appendChild(div);
+  scrollBot();
+}
+
+function showTyping() {
+  const chatEl = document.getElementById('chatMessages');
+  const div = document.createElement('div');
+  div.id = 'typingIndicator';
+  div.className = 'chat-msg';
+  div.innerHTML = `
+    <div class="chat-avatar">${BOT_META[currentBot].icon}</div>
+    <div class="chat-bubble chat-bubble-bot"><div class="typing-dots"><span></span><span></span><span></span></div></div>`;
+  chatEl.appendChild(div);
+  scrollBot();
+}
+function hideTyping() {
+  document.getElementById('typingIndicator')?.remove();
+}
+
+/* ── Send message ── */
+async function sendMessage() {
+  if (!currentUser || !authToken) { openAuthModal('login'); return; }
+  if (isSending) return;
+
+  const input = document.getElementById('messageInput');
+  const msg   = input.value.trim();
+  if (!msg) return;
+
+  // Remove welcome screen if present
+  document.querySelector('.chat-welcome')?.remove();
+
+  input.value = '';
+  autoResize(input);
+  isSending = true;
+  document.getElementById('sendBtn').disabled = true;
+
+  appendUserBubble(msg);
+  showTyping();
+
+  try {
+    const res  = await fetch(`${WORKER_URL}/api/chat`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${authToken}` },
+      body: JSON.stringify({ message: msg, botType: currentBot }),
+    });
+    const data = await res.json();
+    hideTyping();
+
+    if (res.status === 401) {
+      clearAuth();
+      appendBotBubble('⚠️ Session expired. Please login again.');
+      setTimeout(() => openAuthModal('login'), 800);
+      return;
+    }
+    if (!res.ok) throw new Error(data.error || 'Failed to get response');
+
+    appendBotBubble(data.response);
+    chatCache[currentBot].push({ user_msg: msg, bot_msg: data.response, created_at: new Date().toISOString() });
+
+  } catch (e) {
+    hideTyping();
+    appendBotBubble(`⚠️ Error: ${e.message}. Please try again.`);
+  } finally {
+    isSending = false;
+    document.getElementById('sendBtn').disabled = false;
+    input.focus();
+  }
+}
+
+/* ── Helpers ── */
+function scrollBot() {
+  const el = document.getElementById('chatMessages');
+  if (el) el.scrollTop = el.scrollHeight;
+}
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+}
+function fmtTime(ts) {
+  return ts
+    ? new Date(ts).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    : new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+function esc(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/\n/g,'<br>');
+}
+function fmtBot(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/\*\*(.*?)\*\*/g,'<strong style="color:#F0F0F0">$1</strong>')
+    .replace(/\*(.*?)\*/g,'<em>$1</em>')
+    .replace(/`(.*?)`/g,'<code style="background:rgba(255,255,255,.1);padding:.1em .35em;border-radius:.3em;font-size:.85em">$1</code>')
+    .replace(/\n/g,'<br>');
+}
+
+/* ════════════════════════════════════════════════════════════════════════
+   MOBILE MENU
+════════════════════════════════════════════════════════════════════════ */
+const hambBtn    = document.getElementById('hambBtn');
 const mobileMenu = document.getElementById('mobileMenu');
-const hambIcon = document.getElementById('hambIcon');
+const hambIcon   = document.getElementById('hambIcon');
 hambBtn.addEventListener('click', () => {
   const open = !mobileMenu.classList.contains('hidden');
   mobileMenu.classList.toggle('hidden', open);
   hambIcon.className = open ? 'fas fa-bars text-xl' : 'fas fa-times text-xl';
 });
 
-/* ── Modal Data ── */
-const MODALS = {
-  privacy: {
-    title: 'Privacy Policy',
-    body: `
-      <p><strong style="color:#F0F0F0;">Last Updated: January 1, 2025</strong></p>
-      <p>At Cryp Talk ("we," "our," or "us"), we are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use this site.</p>
-      <h3>1. Information We Collect</h3>
-      <p>We may collect personal information you voluntarily provide — such as your email address when subscribing to our newsletter. We also automatically collect certain technical data when you visit our website, including your IP address, browser type, operating system, referring URLs, and pages viewed. This data is collected through cookies and similar tracking technologies including Google Analytics and Google AdSense.</p>
-      <h3>2. How We Use Your Information</h3>
-      <p>We use collected information to deliver our newsletter and educational content, improve website performance and user experience, analyze traffic patterns, display relevant advertising through Google AdSense, and respond to your inquiries. We do not sell, rent, or trade your personal information to third parties without your consent.</p>
-      <h3>3. Cookies &amp; Advertising</h3>
-      <p>We use first-party cookies and third-party cookies from Google Analytics and Google AdSense. Google AdSense may use cookies to display personalized advertisements based on your browsing behavior. You can opt out of personalized ads by visiting Google's Ads Settings page. You can also control cookie preferences through your browser settings, though disabling cookies may affect website functionality.</p>
-      <h3>4. Third-Party Services</h3>
-      <p>We use trusted third-party service providers including Google Analytics for traffic analysis, Google AdSense for advertising, and email marketing platforms for newsletter delivery. These providers have their own privacy policies and are obligated to protect your information.</p>
-      <h3>5. Data Security</h3>
-      <p>We implement appropriate technical and organizational measures to protect your personal data against unauthorized access, alteration, disclosure, or destruction. However, no internet transmission is 100% secure, and we cannot guarantee absolute security of data transmitted to our website.</p>
-      <h3>6. Your Rights</h3>
-      <p>You have the right to access, correct, or delete your personal information at any time. You may opt out of our marketing emails using the unsubscribe link in any email. For any privacy-related requests, please contact us at tolkcryp@gmail.com.</p>
-      <h3>7. Children's Privacy</h3>
-      <p>Our website is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe we have inadvertently collected such information, please contact us immediately so we can delete it.</p>
-      <h3>8. Changes to This Policy</h3>
-      <p>We reserve the right to update this Privacy Policy at any time. Changes will be posted on this page with an updated date. Your continued use of our website after changes constitutes your acceptance of the revised policy.</p>
-    `
-  },
-  terms: {
-    title: 'Terms of Service',
-    body: `
-      <p><strong style="color:#F0F0F0;">Last Updated: January 1, 2025</strong></p>
-      <p>Welcome to Cryp Talk. By accessing or using our website, you agree to be bound by these Terms of Service. Please read them carefully. If you do not agree to all terms, please discontinue use of our website immediately.</p>
-      <h3>1. Acceptance of Terms</h3>
-      <p>By accessing our website, you confirm you are at least 18 years of age, have legal capacity to enter into these terms, and agree to comply with all applicable laws and regulations in your jurisdiction regarding cryptocurrency trading and online content.</p>
-      <h3>2. Educational Content Only — Not Financial Advice</h3>
-      <p>All content published on Cryp Talk — including market analysis, strategy guides, indicator descriptions, book recommendations, and video content — is strictly for educational and informational purposes only. Nothing on this website constitutes financial, investment, legal, or tax advice. We are not a registered financial advisor, broker-dealer, or investment firm. You should always conduct thorough independent research and consult a qualified financial professional before making any investment decision.</p>
-      <h3>3. Risk Disclaimer</h3>
-      <p>Cryptocurrency trading and investing involves substantial risk of loss and is not suitable for all investors. The extreme volatility of cryptocurrency markets means you could lose part or all of your invested capital. Past performance of any strategy, indicator, or asset discussed on this website is not indicative of future results. Never invest more than you can afford to lose.</p>
-      <h3>4. Intellectual Property</h3>
-      <p>All content on this website — including text, graphics, logos, images, PDF guides, TradingView indicator scripts, and video content — is the intellectual property of Cryp Talk and is protected by applicable copyright laws. You may not reproduce, distribute, modify, or create derivative works from our content without express written permission.</p>
-      <h3>5. Affiliate Disclosure</h3>
-      <p>Cryp Talk participates in affiliate marketing programs with cryptocurrency exchanges and other financial service providers. We may earn a commission when you sign up or make a qualifying transaction through our affiliate links. This does not affect the cost to you. We only recommend products and services we genuinely use and believe provide real value to our audience.</p>
-      <h3>6. User Conduct</h3>
-      <p>You agree not to use our website to engage in any unlawful activity, distribute spam or malicious code, attempt to gain unauthorized access to any part of our systems, violate any third-party intellectual property rights, or engage in any activity that disrupts or interferes with the normal operation of our website.</p>
-      <h3>7. Limitation of Liability</h3>
-      <p>To the maximum extent permitted by law, Cryp Talk, its owners, employees, contributors, and affiliates shall not be liable for any direct, indirect, incidental, special, punitive, or consequential damages arising from your use of our website, reliance on any information provided herein, or any trading decisions you make based on our content. Your use of this website is entirely at your own risk.</p>
-      <h3>8. Governing Law</h3>
-      <p>These Terms of Service shall be governed by and construed in accordance with applicable laws. Any disputes arising from or related to these Terms shall be resolved through binding arbitration, and you waive any right to a jury trial or class action proceeding.</p>
-    `
-  },
-  about: {
-    title: 'About Cryp Talk',
-    body: `
-      <p>Cryp Talk is a professional crypto market analysis and education platform built by experienced traders, for traders at every level. We operate at the intersection of technical analysis, on-chain data intelligence, and market psychology to deliver actionable insights across the most important assets in the crypto ecosystem.</p>
-      <h3>Our Mission</h3>
-      <p>Our mission is to democratize high-quality crypto trading education. We believe every retail trader deserves access to the same analytical frameworks, tools, and insights used by institutional market participants. By providing free PDF strategy guides, custom TradingView Pine Script indicators, and consistent weekly video analysis, we aim to give our community a genuine edge in the markets.</p>
-      <h3>What We Cover</h3>
-      <p>We publish in-depth market analysis and strategy guides for Bitcoin (BTC), Ethereum (ETH), Solana (SOL), Dogecoin (DOGE), Render Network (RNDR), and other high-potential assets. Our analysis methodology combines multi-timeframe technical analysis, volume profile theory, Fibonacci retracement and extension levels, Smart Money Concepts (order blocks, fair value gaps, liquidity sweeps), and fundamental on-chain data metrics.</p>
-      <h3>Our Custom TradingView Tools</h3>
-      <p>Our team develops and shares custom TradingView Pine Script indicators specifically designed for crypto market dynamics. These tools are used by thousands of traders across 50+ countries to identify key market structure shifts, volume anomalies, and high-probability trade setups. All indicator scripts are free to access via our TradingView page.</p>
-      <h3>Our Community</h3>
-      <p>The Cryp Talk community spans YouTube, Telegram, and X (formerly Twitter), with over 47,000 subscribers and followers. We are committed to maintaining a high-signal, noise-free environment where serious traders can learn, sharpen their skills, and connect with like-minded individuals.</p>
-      <h3>Transparency &amp; Ethics</h3>
-      <p>We believe in full transparency. We clearly disclose all affiliate relationships and always flag sponsored content. We do not accept payment for favorable coverage of any cryptocurrency project, exchange, or financial product. Our recommendations are based solely on our genuine assessment of value to our audience.</p>
-    `
-  },
-  contact: {
-    title: 'Contact Us',
-    body: `
-      <p>We'd love to hear from you. Whether you have a question about our content, a business inquiry, a technical issue, or feedback on our guides, reach out through any of the channels below and we'll get back to you promptly.</p>
-      <div style="display:flex;flex-direction:column;gap:12px;margin-top:16px;">
-        <div class="glass-card" style="border-radius:12px;padding:16px;display:flex;align-items:center;gap:14px;">
-          <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,107,26,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <i class="fas fa-envelope" style="color:#FF6B1A;"></i>
-          </div>
-          <div>
-            <div style="color:#F0F0F0;font-size:.875rem;font-weight:600;">General Inquiries</div>
-            <div style="color:#6B7280;font-size:.875rem;">tolkcryp@gmail.com</div>
-          </div>
-        </div>
-        <div class="glass-card" style="border-radius:12px;padding:16px;display:flex;align-items:center;gap:14px;">
-          <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,107,26,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <i class="fas fa-handshake" style="color:#FF6B1A;"></i>
-          </div>
-          <div>
-            <div style="color:#F0F0F0;font-size:.875rem;font-weight:600;">Business &amp; Partnerships</div>
-            <div style="color:#6B7280;font-size:.875rem;">tolkcryp@gmail.com</div>
-          </div>
-        </div>
-        <div class="glass-card" style="border-radius:12px;padding:16px;display:flex;align-items:center;gap:14px;">
-          <div style="width:40px;height:40px;border-radius:10px;background:rgba(29,161,242,.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <i class="fab fa-telegram" style="color:#38bdf8;"></i>
-          </div>
-          <div>
-            <div style="color:#F0F0F0;font-size:.875rem;font-weight:600;">Telegram Community</div>
-            <div style="color:#6B7280;font-size:.875rem;">@cryp_talk13</div>
-          </div>
-        </div>
-        <div class="glass-card" style="border-radius:12px;padding:16px;display:flex;align-items:center;gap:14px;">
-          <div style="width:40px;height:40px;border-radius:10px;background:rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <i class="fab fa-youtube" style="color:#ef4444;"></i>
-          </div>
-          <div>
-            <div style="color:#F0F0F0;font-size:.875rem;font-weight:600;">YouTube Channel</div>
-            <div style="color:#6B7280;font-size:.875rem;">youtube.com/@cryp_talk7</div>
-          </div>
-        </div>
-        <div class="glass-card" style="border-radius:12px;padding:16px;display:flex;align-items:center;gap:14px;">
-          <div style="width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-            <i class="fab fa-x-twitter" style="color:#E5E7EB;"></i>
-          </div>
-          <div>
-            <div style="color:#F0F0F0;font-size:.875rem;font-weight:600;">X (Twitter)</div>
-            <div style="color:#6B7280;font-size:.875rem;">@cryp_talk7</div>
-          </div>
-        </div>
-      </div>
-      <p style="margin-top:16px;color:#4B5563;font-size:.75rem;">
-        We typically respond to all email inquiries within 24–48 business hours.
-        For the fastest response, reach out via Telegram.
-      </p>
-    `
-  }
-};
-
-/* ── Modal Functions ── */
-function openModal(type) {
-  const data = MODALS[type];
-  if (!data) return;
-  document.getElementById('modalTitle').textContent = data.title;
-  document.getElementById('modalBody').innerHTML    = data.body;
-  const overlay = document.getElementById('modalOverlay');
-  overlay.classList.remove('hidden');
-  overlay.classList.add('flex');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal() {
-  const overlay = document.getElementById('modalOverlay');
-  overlay.classList.add('hidden');
-  overlay.classList.remove('flex');
-  document.body.style.overflow = '';
-}
-
-/* Close on backdrop click */
-document.getElementById('modalOverlay').addEventListener('click', function(e) {
-  if (e.target === this) closeModal();
+/* ── ESC key closes modals ── */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { closeAuthModal(); closeBotModal(); }
 });
 
-/* Close on Escape key */
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+/* ════════════════════════════════════════════════════════════════════════
+   INIT
+════════════════════════════════════════════════════════════════════════ */
+updateNavAuth();
 </script>
 </body>
 </html>
